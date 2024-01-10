@@ -12,7 +12,7 @@ public class TestUserXml {
         UserXml userXml = context.getBean(UserXml.class);
         System.out.println(userXml);
         //通过ID获取,需要强转类型(非常用方式）
-        UserXml userXml1 = (UserXml) context.getBean("UserXml");
+        UserXml userXml1 = (UserXml) context.getBean("userXml");
         System.out.println(userXml1);
     }
 }
