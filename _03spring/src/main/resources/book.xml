@@ -9,7 +9,7 @@
      -->
 
     <bean id="book" class="com.sakai.spring.dibase.Book ">
-        <property name="bookName" value="花千骨"></property>
-        <property name="bookAuthor" value="赵丽颖"></property>
+        <property name="bookName" value="花千骨"/>
+        <property name="bookAuthor" value="赵丽颖"/>
     </bean>
 </beans>
