@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>_02maven</module>
+        <module>_03spring</module>
     </modules>
 
     <properties>
