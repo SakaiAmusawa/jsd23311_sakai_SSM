@@ -14,6 +14,7 @@ public class UserCache {
         value参数值得是IoC容器中Spring Bean 对象的名称
      */
     @Autowired
-    @Qualifier(value = "cacheImpl1")
+    //@Qualifier(value = "cacheImpl1")
+    @Qualifier(value = "aaa")
     private Cache cache;
 }
