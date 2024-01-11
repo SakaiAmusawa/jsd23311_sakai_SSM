@@ -18,19 +18,11 @@ public class Order {
         this.status = status;
     }
 
-    /**
-     * 获取
-     *
-     * @return status
-     */
-    public String getStatus() {
-        return status;
-    }
 
     /**
      * 设置
      *
-     * @param status
+     * @param status 测试用随意填写
      */
     @Value("等待买家付款")
     public void setStatus(String status) {
