@@ -31,7 +31,11 @@ public class CommentTests {
 
     @Test
     void updateTest() {
-        System.out.println(commentMapper.update(300));
+        Comment comment = new Comment();
+        comment.setId(300L);
+        comment.setContent("修改评论");
+        comment.setCreated(new Date());
+        System.out.println(commentMapper.update(comment));
     }
 
     @Test

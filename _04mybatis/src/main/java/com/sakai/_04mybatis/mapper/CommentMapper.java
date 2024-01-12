@@ -15,8 +15,8 @@ public interface CommentMapper {
     @Delete("DELETE FROM blog.comment WHERE id = #{id}")
     int delete(int id);
 
-    @Update("UPDATE blog.comment SET content = '进行修改操作' WHERE id =#{id}  ")
-    int update(int id);
+    @Update("UPDATE blog.comment SET content = #{content},created = #{created} WHERE id =#{id}  ")
+    int update(Comment comment);
 
     @Select("SELECT content,user_id userId,weibo_id weiboId FROM comment WHERE id = #{id}")
     VOComment1 select1(int id);
