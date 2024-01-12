@@ -51,7 +51,7 @@
 
 * 创建控制器类：`CommentMapper`，通过接口方式注入 `Mapper` 对象；
 
-* 创建测试类  `com.sakai.spring.resource.TestMapper` ，进行 `Spring Bean` 对象的创建及依赖注入测试；
+* 创建测试类  `TestMapper` ，进行 `Spring Bean` 对象的创建及依赖注入测试；
 
 * 创建实现类 `MapperImpl2`，并将此类交由 `Spring` 框架管理，进行测试。
 
