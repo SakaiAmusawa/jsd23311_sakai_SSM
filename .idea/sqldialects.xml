@@ -5,7 +5,9 @@
     <file url="file://$PROJECT_DIR$/_04mybatis/src/main/java/com/sakai/_04mybatis/mapper/UserMapper.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/_04mybatis/src/main/java/com/sakai/_04mybatis/mapper/WeiboMapper.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/egmybatis1/src/main/java/com/sakai/egmybatis1/mapper/ProductMapper.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/egmybatis2/src/main/java/com/sakai/egmybatis2/mapper/CustomersMapper.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/笔记/SQL脚本/02练习-订单管理系统.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/笔记/SQL脚本/03MyBatis-顾客订单大练习.sql" dialect="MariaDB" />
+    <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>
