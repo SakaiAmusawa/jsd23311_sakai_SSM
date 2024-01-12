@@ -51,4 +51,34 @@ class ApplicationTests {
         System.out.println(weiboMapper.deleteWeibo(206));
     }
 
+    @Test
+    void updateWeiboTest() {
+        Weibo weibo = new Weibo();
+        weibo.setContent("细雨淋淋，敲打我心");
+        weibo.setCreated(new Date());
+        weibo.setId(200L);
+        weiboMapper.updateWeibo(weibo);
+    }
+
+    @Test
+    void selectWeiboTest() {
+        System.out.println(weiboMapper.selectWeibo(200));
+    }
+
+    @Test
+    void selectAllTest() {
+        System.out.println(weiboMapper.selectAll());
+    }
+
+    @Test
+    void selectColumns() {
+        System.out.println(weiboMapper.selectColumns(200L));
+    }
+
+
+    @Test
+    void eg7Test() {
+        System.out.println(weiboMapper.selecteg7(100L));
+    }
+
 }

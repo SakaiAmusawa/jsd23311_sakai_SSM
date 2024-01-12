@@ -1,0 +1,46 @@
+package com.sakai._04mybatis;
+
+import com.sakai._04mybatis.mapper.CommentMapper;
+import com.sakai._04mybatis.pojo.entity.Comment;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Date;
+
+@SpringBootTest
+public class CommentTests {
+    @Autowired
+    private CommentMapper commentMapper;
+
+    @Test
+    void insertTest() {
+        Comment comment = new Comment();
+        comment.setContent("这是一条评论");
+        comment.setCreated(new Date());
+        comment.setUserId(100L);
+        comment.setWeiboId(200L);
+
+        System.out.println(commentMapper.insert(comment));
+    }
+
+    @Test
+    void deleteTest() {
+        System.out.println(commentMapper.delete(305));
+    }
+
+    @Test
+    void updateTest() {
+        System.out.println(commentMapper.update(300));
+    }
+
+    @Test
+    void select1Test() {
+        System.out.println(commentMapper.select1(300));
+    }
+
+    @Test
+    void select2Test() {
+        System.out.println(commentMapper.select2(200));
+    }
+}
