@@ -70,4 +70,14 @@ public class CommentTests {
         list.add(302);
         System.out.println(commentMapper.deleteByIds2(list));
     }
+
+    @Test
+    void dynamicUpdateTest() {
+        Comment comment = new Comment();
+        comment.setId(300L);
+        comment.setContent("Hello bro");
+        comment.setCreated(new Date());
+
+        System.out.println(commentMapper.dynamicUpdate(comment));
+    }
 }

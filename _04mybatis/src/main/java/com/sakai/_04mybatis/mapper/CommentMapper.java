@@ -37,4 +37,10 @@ public interface CommentMapper {
     方法二：集合方式
     */
     int deleteByIds2(ArrayList<Integer> list);
+
+    /*
+     * 动态修改：根据评论id动态修改评论信息
+     */
+
+    int dynamicUpdate(Comment comment);
 }

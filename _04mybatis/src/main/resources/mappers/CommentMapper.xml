@@ -45,4 +45,16 @@
             #{list}
         </foreach>)
     </delete>
+
+    <!--动态修改-->
+    <update id="dynamicUpdate">
+        UPDATE blog.comment
+        <set>
+            <if test="content!=null">content = #{content},</if>
+            <if test="created!=null">created = #{created},</if>
+            <if test="userId!=null">user_id = #{userId},</if>
+            <if test="weiboId!=null">weibo_id = #{weiboId}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
 </mapper>
