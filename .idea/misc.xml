@@ -16,7 +16,6 @@
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/egmybatis2/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis2/pom.xml" />
       </set>
     </option>
