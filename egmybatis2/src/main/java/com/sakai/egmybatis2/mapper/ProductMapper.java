@@ -24,4 +24,7 @@ public interface ProductMapper {
     //通过id动态的修改商品信息
     int dynamicUpdate(Product product);
 
+    //统计商品总数量
+    int selectCount();
+
 }

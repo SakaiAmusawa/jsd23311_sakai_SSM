@@ -32,13 +32,14 @@
         UPDATE mybatisdb.product
         <set>
             <if test="title!=null">title = #{title},</if>
-        </set>
-        <set>
             <if test="price!=null">price = #{price},</if>
-        </set>
-        <set>
             <if test="stock!=null">stock =#{stock}</if>
         </set>
         WHERE id =#{id}
     </update>
+
+    <select id="selectCount" resultType="int">
+        SELECT COUNT(*)
+        FROM mybatisdb.product
+    </select>
 </mapper>

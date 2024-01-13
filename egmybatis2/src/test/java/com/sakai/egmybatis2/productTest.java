@@ -52,4 +52,10 @@ public class productTest {
         product.setTitle("橙子");
         System.out.println(productMapper.dynamicUpdate(product));
     }
+
+    //统计商品总数量
+    @Test
+    void selectCountTest() {
+        System.out.println(productMapper.selectCount());
+    }
 }
