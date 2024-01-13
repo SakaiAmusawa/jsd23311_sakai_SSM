@@ -48,7 +48,7 @@ class ApplicationTests {
 
     @Test
     void deleteWeiboTest() {
-        System.out.println(weiboMapper.deleteWeibo(206));
+        System.out.println(weiboMapper.deleteWeibo(205));
     }
 
     @Test
@@ -57,7 +57,7 @@ class ApplicationTests {
         weibo.setContent("细雨淋淋，敲打我心");
         weibo.setCreated(new Date());
         weibo.setId(200L);
-        weiboMapper.updateWeibo(weibo);
+        System.out.println(weiboMapper.updateWeibo(weibo));
     }
 
     @Test

@@ -82,6 +82,6 @@ public class Weibo {
     }
 
     public String toString() {
-        return "WeiboMapper{id = " + id + ", content = " + content + ", created = " + created + ", user_id = " + userId + "}";
+        return "WeiboMapper{id = " + id + ", content = " + content + ", created = " + created + ", user_id = " + userId + "\n}";
     }
 }

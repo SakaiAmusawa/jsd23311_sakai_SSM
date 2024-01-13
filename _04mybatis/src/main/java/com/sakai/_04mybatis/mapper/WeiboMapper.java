@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface WeiboMapper {
-    @Insert("INSERT INTO blog.weibo(content, created, user_id) VALUES (#{content},#{created},#{userId})")
+    //@Insert("INSERT INTO blog.weibo(content, created, user_id) VALUES (#{content},#{created},#{userId})")
     int insertWeibo(Weibo weibo);
 
     /*
@@ -17,14 +17,14 @@ public interface WeiboMapper {
     补充：如果需要的参数多，可以考虑从封装类中获取属性，如上
          如果需要的参数少，可以考虑如下操作
      */
-    @Delete("DELETE FROM blog.weibo WHERE id = #{id}")
+   // @Delete("DELETE FROM blog.weibo WHERE id = #{id}")
     int deleteWeibo(int id);
 
     /**
      * @param weibo 传入Weibo对象，这样可以在使用其中多个属性时简化步骤
      * @return 1为执行成功
      */
-    @Update("UPDATE blog.weibo SET content = #{content},created = #{created} WHERE id = #{id}")
+    //@Update("UPDATE blog.weibo SET content = #{content},created = #{created} WHERE id = #{id}")
     int updateWeibo(Weibo weibo);
 
     /**

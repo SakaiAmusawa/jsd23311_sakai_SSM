@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sakai._04mybatis.mapper.WeiboMapper">
+    <insert id="insertWeibo">
+        INSERT INTO blog.weibo(content, created, user_id)
+        VALUES (#{content}, #{created}, #{userId})
+    </insert>
+    <delete id="deleteWeibo">
+        DELETE
+        FROM blog.weibo
+        WHERE id = #{id}
+    </delete>
+
+    <update id="updateWeibo">
+        UPDATE blog.weibo
+        SET content = #{content},
+            created = #{created}
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectWeibo">
+        SELECT id,content,created,user_id userId FROM blog.weibo WHERE id = #{id}
+    </select>
+
+    <select id="selectAll">
+        SELECT id,content,created,user_id userId FROM blog.weibo
+    </select>
+
+    <select id="selectColumns">
+        SELECT content,created FROM blog.weibo WHERE id = #{id}
+    </select>
+
+    <select id="selecteg7">
+        SELECT id,content,created FROM blog.weibo WHERE user_id = #{userId}
+    </select>
+</mapper>
