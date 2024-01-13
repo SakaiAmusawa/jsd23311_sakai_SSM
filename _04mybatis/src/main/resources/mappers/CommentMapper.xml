@@ -30,4 +30,12 @@
         WHERE weibo_id = #{id}
     </select>
 
+    <!--动态删除：数组方式-->
+    <!---->
+    <delete id="deleteByIds1">
+        DELETE FROM blog.comment WHERE id IN (
+        <foreach collection="array" item="arrays" separator=",">
+            #{arrays}
+        </foreach>)
+    </delete>
 </mapper>

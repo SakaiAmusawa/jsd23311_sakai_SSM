@@ -47,4 +47,10 @@ public class CommentTests {
     void select2Test() {
         System.out.println(commentMapper.select2(200));
     }
+
+    @Test
+    void deleteByIdsTest() {
+        Integer[] integers = new Integer[]{301, 303};
+        commentMapper.deleteByIds1(integers);
+    }
 }
