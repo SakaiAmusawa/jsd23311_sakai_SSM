@@ -5,6 +5,7 @@ import com.sakai._04mybatis.pojo.vo.VOComment1;
 import com.sakai._04mybatis.pojo.vo.VOComment2;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mapper
@@ -31,4 +32,9 @@ public interface CommentMapper {
      */
 
     int deleteByIds1(Integer[] ids);
+
+    /*
+    方法二：集合方式
+    */
+    int deleteByIds2(ArrayList<Integer> list);
 }

@@ -31,11 +31,18 @@
     </select>
 
     <!--动态删除：数组方式-->
-    <!---->
     <delete id="deleteByIds1">
         DELETE FROM blog.comment WHERE id IN (
         <foreach collection="array" item="arrays" separator=",">
             #{arrays}
+        </foreach>)
+    </delete>
+
+    <!--动态删除：集合方式-->
+    <delete id="deleteByIds2">
+        DELETE FROM blog.comment WHERE id IN (
+        <foreach collection="list" item="list" separator=",">
+            #{list}
         </foreach>)
     </delete>
 </mapper>

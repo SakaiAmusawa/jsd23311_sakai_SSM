@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 @SpringBootTest
@@ -49,8 +50,16 @@ public class CommentTests {
     }
 
     @Test
-    void deleteByIdsTest() {
+    void deleteByIdsTest1() {
         Integer[] integers = new Integer[]{301, 303};
-        commentMapper.deleteByIds1(integers);
+        System.out.println(commentMapper.deleteByIds1(integers));
+    }
+
+    @Test
+    void deleteByIds2() {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(301);
+        list.add(302);
+        System.out.println(commentMapper.deleteByIds2(list));
     }
 }
