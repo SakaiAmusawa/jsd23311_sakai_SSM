@@ -80,4 +80,9 @@ public class CommentTests {
 
         System.out.println(commentMapper.dynamicUpdate(comment));
     }
+
+    @Test
+    void selectAllTest() {
+        System.out.println(commentMapper.selectAll());
+    }
 }

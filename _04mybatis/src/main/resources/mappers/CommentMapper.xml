@@ -30,9 +30,15 @@
         WHERE weibo_id = #{id}
     </select>
 
+    <sql id="deleteSql">
+        DELETE
+        FROM blog.comment
+        WHERE id IN
+    </sql>
     <!--动态删除：数组方式-->
     <delete id="deleteByIds1">
-        DELETE FROM blog.comment WHERE id IN (
+        <include refid="deleteSql"/>
+        (
         <foreach collection="array" item="arrays" separator=",">
             #{arrays}
         </foreach>)
@@ -40,7 +46,8 @@
 
     <!--动态删除：集合方式-->
     <delete id="deleteByIds2">
-        DELETE FROM blog.comment WHERE id IN (
+        <include refid="deleteSql"/>
+        (
         <foreach collection="list" item="list" separator=",">
             #{list}
         </foreach>)
@@ -57,4 +64,10 @@
         </set>
         WHERE id = #{id}
     </update>
+
+    <!--查询评论的数量-->
+    <select id="selectAll" resultType="int">
+        SELECT COUNT(*)
+        FROM blog.comment
+    </select>
 </mapper>

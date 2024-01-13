@@ -43,4 +43,9 @@ public interface CommentMapper {
      */
 
     int dynamicUpdate(Comment comment);
+
+    /*
+    统计评论的数量
+     */
+    int selectAll();
 }
