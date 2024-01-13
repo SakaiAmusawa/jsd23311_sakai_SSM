@@ -33,16 +33,16 @@ public interface WeiboMapper {
      */
 
     //                                 注意使用user_id起一个别名，别名就是weibo Bean中对应的属性名
-    @Select("SELECT id,content,created,user_id userId FROM blog.weibo WHERE id = #{id}")
+//    @Select("SELECT id,content,created,user_id userId FROM blog.weibo WHERE id = #{id}")
     Weibo selectWeibo(int id);
 
-    @Select("SELECT id,content,created,user_id userId FROM blog.weibo")
+//    @Select("SELECT id,content,created,user_id userId FROM blog.weibo")
     List<Weibo> selectAll();
 
-    @Select("SELECT content,created FROM blog.weibo WHERE id = #{id}")
+//    @Select("SELECT content,created FROM blog.weibo WHERE id = #{id}")
     List<WeiboVO1> selectColumns(Long id);
 
-    @Select("SELECT id,content,created FROM blog.weibo WHERE user_id = #{userId}")
+//    @Select("SELECT id,content,created FROM blog.weibo WHERE user_id = #{userId}")
     List<VOeg7> selecteg7(Long userId);
 
 }

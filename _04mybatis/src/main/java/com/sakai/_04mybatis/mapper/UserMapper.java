@@ -8,6 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
 
     //在mybatis中的占位符为 #{}
-    @Insert("INSERT INTO blog.user(username, password, nickname, created) VALUES (#{username},#{password},#{nickname},#{created})")
+//    @Insert("INSERT INTO blog.user(username, password, nickname, created) VALUES (#{username},#{password},#{nickname},#{created})")
     void insertUser(User user);
 }
