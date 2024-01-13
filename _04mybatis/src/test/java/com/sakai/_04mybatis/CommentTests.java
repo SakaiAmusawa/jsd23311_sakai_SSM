@@ -49,12 +49,20 @@ public class CommentTests {
         System.out.println(commentMapper.select2(200));
     }
 
+    /*
+    动态SQL的使用
+        通过数组的方式删除指定ID的信息
+     */
     @Test
     void deleteByIdsTest1() {
         Integer[] integers = new Integer[]{301, 303};
         System.out.println(commentMapper.deleteByIds1(integers));
     }
 
+    /*
+    动态SQL的使用
+        通过集合的方式删除指定ID的信息
+    */
     @Test
     void deleteByIds2() {
         ArrayList<Integer> list = new ArrayList<>();
