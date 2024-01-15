@@ -70,4 +70,9 @@ public interface WeiboMapper {
      * ResultMap多表：查询指定用户发的微博信息
      */
     SelectWeiboInfoByUserId selectMap2(int uid);
+
+    /**
+     * 获取指定微博的所有评论
+     */
+    ResultMapVO3 selectMap3(int wid);
 }

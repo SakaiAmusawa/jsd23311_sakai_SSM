@@ -90,4 +90,22 @@
                  JOIN blog.weibo w on u.id = w.user_id
         WHERE user_id = #{uid}
     </select>
+
+    <resultMap id="sM3" type="com.sakai._04mybatis.pojo.vo.ResultMapVO3">
+        <id column="wid" property="id"/>
+        <result column="content" property="content"/>
+        <collection property="commentList" ofType="com.sakai._04mybatis.pojo.entity.Comment">
+            <id column="cid" property="id"/>
+            <result column="ccontent" property="content"/>
+            <result column="ccreated" property="created"/>
+            <result column="user_id" property="userId"/>
+            <result column="weibo_id" property="weiboId"/>
+        </collection>
+    </resultMap>
+    <select id="selectMap3" resultMap="sM3">
+        SELECT w.id wid, w.content, c.id cid, c.content ccontent, c.created ccreated, c.user_id, c.weibo_id
+        FROM blog.weibo w
+                 JOIN blog.comment c on w.id = c.weibo_id
+        WHERE w.id = #{wid}
+    </select>
 </mapper>
