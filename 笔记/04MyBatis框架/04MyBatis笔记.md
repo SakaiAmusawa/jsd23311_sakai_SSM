@@ -487,7 +487,7 @@ XML的语法严格，每个标签都必须有一个结束标签，标签的嵌�
 
 2. 在文档服务器中下载映射文件模板
 
-   http://doc.canglaoshi.org/
+   https://doc.codeboy.com/
 
    配置文件下载 - MyBatis Mapper映射文件，下载后解压得到：**someMapper.xml**
 
@@ -1249,7 +1249,7 @@ void selectMapByUserIdTest(){
 
 #### 1 工程准备
 
-* 在 **mybatisdb** 库中创建订单表 `product`
+* 在 **mybatisdb** 库中创建商品表 `product`
 
   包括商品id，商品标题title，商品价格price，商品库存stock 四个字段；
 
