@@ -60,4 +60,9 @@ public interface WeiboMapper {
      * 查看指定微博下的所有评论
      */
     List<CommentList> commentList(int id);
+
+    /**
+     * ResultMap单表的Demo
+     */
+    List<ResultMapVO1> selectWeiboById(int wid);
 }

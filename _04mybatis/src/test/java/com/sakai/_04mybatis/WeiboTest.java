@@ -26,4 +26,9 @@ public class WeiboTest {
         System.out.println(weiboMapper.commentList(200));
     }
 
+    @Test
+    void selectWeiboByIdTest() {
+        System.out.println(weiboMapper.selectWeiboById(200));
+    }
+
 }

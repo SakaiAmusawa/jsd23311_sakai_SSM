@@ -62,4 +62,11 @@
                  JOIN blog.user u on u.id = c.user_id
         WHERE weibo_id  = #{id}
     </select>
+
+    <resultMap id="rmVO1" type="com.sakai._04mybatis.pojo.vo.ResultMapVO1"/>
+    <select id="selectWeiboById" resultMap="rmVO1">
+        SELECT id, content, user_id
+        FROM blog.comment
+        WHERE weibo_id = #{id}
+    </select>
 </mapper>
