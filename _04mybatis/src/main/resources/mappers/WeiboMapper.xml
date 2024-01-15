@@ -108,4 +108,20 @@
                  JOIN blog.comment c on w.id = c.weibo_id
         WHERE w.id = #{wid}
     </select>
+
+    <resultMap id="sM4" type="com.sakai._04mybatis.pojo.vo.ResultMapVO4">
+        <id column="wid" property="id"/>
+        <result column="content" property="content"/>
+        <collection property="commentListVOS" ofType="com.sakai._04mybatis.pojo.vo.CommentListVO">
+            <id column="cid" property="id"/>
+            <result column="ccontent" property="content"/>
+            <result column="ccreated" property="created"/>
+        </collection>
+    </resultMap>
+    <select id="selectMap4" resultMap="sM4">
+        SELECT w.id wid, w.content, c.id cid, c.content ccontent, c.created ccreated, c.user_id, c.weibo_id
+        FROM blog.weibo w
+                 JOIN blog.comment c on w.id = c.weibo_id
+        WHERE w.id = #{wid}
+    </select>
 </mapper>

@@ -40,4 +40,9 @@ public class WeiboTest {
     void selectMap3Test() {
         System.out.println(weiboMapper.selectMap3(200));
     }
+
+    @Test
+    void selectMap4Test() {
+        System.out.println(weiboMapper.selectMap4(200));
+    }
 }

@@ -75,4 +75,6 @@ public interface WeiboMapper {
      * 获取指定微博的所有评论
      */
     ResultMapVO3 selectMap3(int wid);
+
+    ResultMapVO4 selectMap4(int wid);
 }
