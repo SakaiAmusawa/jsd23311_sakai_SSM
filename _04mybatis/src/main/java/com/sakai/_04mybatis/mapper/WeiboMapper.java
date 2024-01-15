@@ -2,8 +2,10 @@ package com.sakai._04mybatis.mapper;
 
 import com.sakai._04mybatis.pojo.entity.Weibo;
 import com.sakai._04mybatis.pojo.vo.VOeg7;
+import com.sakai._04mybatis.pojo.vo.WeiboDetailVo;
+import com.sakai._04mybatis.pojo.vo.WeiboIndexVO;
 import com.sakai._04mybatis.pojo.vo.WeiboVO1;
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -17,7 +19,7 @@ public interface WeiboMapper {
     补充：如果需要的参数多，可以考虑从封装类中获取属性，如上
          如果需要的参数少，可以考虑如下操作
      */
-   // @Delete("DELETE FROM blog.weibo WHERE id = #{id}")
+    // @Delete("DELETE FROM blog.weibo WHERE id = #{id}")
     int deleteWeibo(int id);
 
     /**
@@ -36,13 +38,24 @@ public interface WeiboMapper {
 //    @Select("SELECT id,content,created,user_id userId FROM blog.weibo WHERE id = #{id}")
     Weibo selectWeibo(int id);
 
-//    @Select("SELECT id,content,created,user_id userId FROM blog.weibo")
+    //    @Select("SELECT id,content,created,user_id userId FROM blog.weibo")
     List<Weibo> selectAll();
 
-//    @Select("SELECT content,created FROM blog.weibo WHERE id = #{id}")
+    //    @Select("SELECT content,created FROM blog.weibo WHERE id = #{id}")
     List<WeiboVO1> selectColumns(Long id);
 
-//    @Select("SELECT id,content,created FROM blog.weibo WHERE user_id = #{userId}")
+    //    @Select("SELECT id,content,created FROM blog.weibo WHERE user_id = #{userId}")
     List<VOeg7> selecteg7(Long userId);
 
+    /**
+     * 多表联查：微博首页列表展示
+     * 查询所有用户发的微博信息，查询：微博ID、微博内容、用户昵称
+     */
+    List<WeiboIndexVO> selectIndex();
+
+    /**
+     * 微博详情页
+     * 根据ID查看微博的详细内容
+     */
+    WeiboDetailVo selectDetail(int id );
 }

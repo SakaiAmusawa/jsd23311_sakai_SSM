@@ -21,18 +21,38 @@
     </update>
 
     <select id="selectWeibo">
-        SELECT id,content,created,user_id userId FROM blog.weibo WHERE id = #{id}
+        SELECT id, content, created, user_id userId
+        FROM blog.weibo
+        WHERE id = #{id}
     </select>
 
     <select id="selectAll">
-        SELECT id,content,created,user_id userId FROM blog.weibo
+        SELECT id, content, created, user_id userId
+        FROM blog.weibo
     </select>
 
     <select id="selectColumns">
-        SELECT content,created FROM blog.weibo WHERE id = #{id}
+        SELECT content, created
+        FROM blog.weibo
+        WHERE id = #{id}
     </select>
 
     <select id="selecteg7">
-        SELECT id,content,created FROM blog.weibo WHERE user_id = #{userId}
+        SELECT id, content, created
+        FROM blog.weibo
+        WHERE user_id = #{userId}
+    </select>
+
+    <select id="selectIndex" resultType="com.sakai._04mybatis.pojo.vo.WeiboIndexVO">
+        SELECT w.id, w.content, u.nickname
+        FROM blog.weibo w
+                 JOIN blog.user u ON w.user_id = u.id
+    </select>
+
+    <select id="selectDetail" resultType="com.sakai._04mybatis.pojo.vo.WeiboDetailVo">
+        SELECT w.id, w.content, w.created, u.nickname
+        FROM blog.weibo w
+                 JOIN blog.user u on u.id = w.user_id
+        WHERE w.id = #{id}
     </select>
 </mapper>
