@@ -27,8 +27,12 @@ public class WeiboTest {
     }
 
     @Test
-    void selectWeiboByIdTest() {
-        System.out.println(weiboMapper.selectWeiboById(200));
+    void selectByWidTest() {
+        System.out.println(weiboMapper.selectByWid(200));
     }
 
+    @Test
+    void SelectWeiboInfoByUserIdTest() {
+        System.out.println(weiboMapper.selectMap2(100));
+    }
 }

@@ -60,13 +60,34 @@
         SELECT c.id, c.content, c.created, u.nickname
         FROM blog.comment c
                  JOIN blog.user u on u.id = c.user_id
-        WHERE weibo_id  = #{id}
+        WHERE weibo_id = #{id}
     </select>
 
-    <resultMap id="rmVO1" type="com.sakai._04mybatis.pojo.vo.ResultMapVO1"/>
-    <select id="selectWeiboById" resultMap="rmVO1">
+    <resultMap id="rmVO1" type="com.sakai._04mybatis.pojo.vo.ResultMapVO1">
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="user_id" property="userId"/>
+    </resultMap>
+    <select id="selectByWid" resultMap="rmVO1">
         SELECT id, content, user_id
         FROM blog.comment
         WHERE weibo_id = #{id}
+    </select>
+
+    <resultMap id="rm2" type="com.sakai._04mybatis.pojo.vo.SelectWeiboInfoByUserId">
+        <id column="uid" property="id"/>
+        <result column="nickname" property="nickname"/>
+        <collection property="weiboList" ofType="com.sakai._04mybatis.pojo.entity.Weibo">
+            <id property="id" column="wid"/>
+            <result column="content" property="content"/>
+            <result column="created" property="created"/>
+            <result column="user_id" property="userId"/>
+        </collection>
+    </resultMap>
+    <select id="selectMap2" resultMap="rm2">
+        SELECT u.id uid, u.nickname, w.id wid, w.content, w.created, w.user_id
+        FROM blog.user u
+                 JOIN blog.weibo w on u.id = w.user_id
+        WHERE user_id = #{uid}
     </select>
 </mapper>

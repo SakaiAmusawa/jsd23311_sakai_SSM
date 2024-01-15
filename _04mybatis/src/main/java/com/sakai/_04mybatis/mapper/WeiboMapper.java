@@ -64,5 +64,10 @@ public interface WeiboMapper {
     /**
      * ResultMap单表的Demo
      */
-    List<ResultMapVO1> selectWeiboById(int wid);
+    List<ResultMapVO1> selectByWid(int wid);
+
+    /**
+     * ResultMap多表：查询指定用户发的微博信息
+     */
+    SelectWeiboInfoByUserId selectMap2(int uid);
 }
