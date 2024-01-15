@@ -1,10 +1,7 @@
 package com.sakai._04mybatis.mapper;
 
 import com.sakai._04mybatis.pojo.entity.Weibo;
-import com.sakai._04mybatis.pojo.vo.VOeg7;
-import com.sakai._04mybatis.pojo.vo.WeiboDetailVo;
-import com.sakai._04mybatis.pojo.vo.WeiboIndexVO;
-import com.sakai._04mybatis.pojo.vo.WeiboVO1;
+import com.sakai._04mybatis.pojo.vo.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -57,5 +54,10 @@ public interface WeiboMapper {
      * 微博详情页
      * 根据ID查看微博的详细内容
      */
-    WeiboDetailVo selectDetail(int id );
+    WeiboDetailVo selectDetail(int id);
+
+    /**
+     * 查看指定微博下的所有评论
+     */
+    List<CommentList> commentList(int id);
 }

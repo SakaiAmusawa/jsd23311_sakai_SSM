@@ -55,4 +55,11 @@
                  JOIN blog.user u on u.id = w.user_id
         WHERE w.id = #{id}
     </select>
+
+    <select id="commentList" resultType="com.sakai._04mybatis.pojo.vo.CommentList">
+        SELECT c.id, c.content, c.created, u.nickname
+        FROM blog.comment c
+                 JOIN blog.user u on u.id = c.user_id
+        WHERE weibo_id  = #{id}
+    </select>
 </mapper>

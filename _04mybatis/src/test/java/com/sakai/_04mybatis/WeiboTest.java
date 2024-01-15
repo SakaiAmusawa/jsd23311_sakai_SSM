@@ -17,8 +17,13 @@ public class WeiboTest {
     }
 
     @Test
-    void selectDetail() {
+    void selectDetailTest() {
         System.out.println(weiboMapper.selectDetail(204));
+    }
+
+    @Test
+    void commentListTest() {
+        System.out.println(weiboMapper.commentList(200));
     }
 
 }
