@@ -4,12 +4,13 @@ public class Product {
     private Long id;
     private String title;
     private Double price;
-    private int stock;
+    private Integer stock;
+
 
     public Product() {
     }
 
-    public Product(Long id, String title, Double price, int stock) {
+    public Product(Long id, String title, Double price, Integer stock) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -68,7 +69,7 @@ public class Product {
      * 获取
      * @return stock
      */
-    public int getStock() {
+    public Integer getStock() {
         return stock;
     }
 
@@ -76,7 +77,7 @@ public class Product {
      * 设置
      * @param stock
      */
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 

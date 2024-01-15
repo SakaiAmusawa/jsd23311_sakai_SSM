@@ -33,9 +33,9 @@
         <set>
             <if test="title!=null">title = #{title},</if>
             <if test="price!=null">price = #{price},</if>
-            <if test="stock!=null">stock =#{stock}</if>
+            <if test="stock!=null">stock = #{stock}</if>
         </set>
-        WHERE id =#{id}
+        WHERE id = #{id}
     </update>
 
     <select id="selectCount" resultType="int">
