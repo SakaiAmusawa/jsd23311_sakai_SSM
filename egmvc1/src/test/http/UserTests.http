@@ -1,0 +1,25 @@
+POST http://localhost:8080/v1/users/update
+Content-Type: application/x-www-form-urlencoded
+
+username = zjw &
+password = 123zhoujiawei &
+nickname = sakai
+
+###
+###
+GET http://localhost:8080/v1/users/delete?id=1
+Accept: application/json
+
+###
+GET http://localhost:8080/v1/users/userList
+Accept: application/json
+
+###
+POST http://localhost:8080/v1/users/insert
+Content-Type: application/x-www-form-urlencoded
+
+username = zjw &
+password = 123zhoujiawei &
+nickname = sakai
+
+###
