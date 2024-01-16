@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BMIController {
 
     /**
-     * <a href="http://localhost:8080/bmi2?weight=50&height=1.75">测试链接</a>
+     * <a href="http://localhost:8080/bmi?weight=50&height=1.75">测试链接</a>
      */
     @RequestMapping("/bmi")
     @ResponseBody

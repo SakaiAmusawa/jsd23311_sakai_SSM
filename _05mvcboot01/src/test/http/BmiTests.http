@@ -1,0 +1,9 @@
+GET http://localhost:8080/bmi?weight=50&height=1.75
+Accept: application/json
+
+###
+POST http://localhost:8080/bmi2
+Content-Type: application/x-www-form-urlencoded
+
+weight = 90 &
+height = 1.75
