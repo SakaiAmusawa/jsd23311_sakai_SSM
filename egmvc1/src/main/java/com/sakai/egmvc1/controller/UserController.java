@@ -1,6 +1,6 @@
 package com.sakai.egmvc1.controller;
 
-import com.sakai.egmvc1.pojo.UserDTO;
+import com.sakai.egmvc1.pojo.dto.UserDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

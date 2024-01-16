@@ -1,4 +1,4 @@
-package com.sakai.egmvc1.pojo;
+package com.sakai.egmvc1.pojo.dto;
 
 public class UserDTO {
     private String username;
