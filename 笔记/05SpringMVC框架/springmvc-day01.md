@@ -216,12 +216,16 @@ public String login(String username, String password){
     * 第4步：清除浏览器缓存.
 
 
-
-
-
-
-
-
+* 搭建 MyBatis 环境；
+    * 第1步：配置文件[数据库连接信息和xml文件映射位置];
+    * 第2步：创建接口文件 **mapper.UserMapper**；
+    * 第3步：resources目录下创建：**mappers/UserMapper.xml**；
+    * 第4步：绑定命名空间 **namespace** ；
+    * 第5步：创建实体类 **pojo.entity.User**
+    * 第6步：启动工程
+* 搭建 Spring MVC 环境；
+* 启动工程；
+* 根据接口实现功能；
 
 
 
