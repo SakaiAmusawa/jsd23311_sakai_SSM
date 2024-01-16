@@ -47,13 +47,12 @@
 
   * 第2题：在订单表中插入一条数据：`'202301020004', '0004', new Date(), '3', 4, 800.88`
 
-  * 第3题：**使用resultMap** 查询指定客户成交的订单信息，结果放到：**OrderListVO** 中，
+  * <font color=red>**第3题：使用resultMap查询指定客户成交的订单信息，结果放到：OrderListVO
+    中，需要显示：顾客id、顾客姓名、订单集合 `List<UserOrders>`**</font>
 
-    需要显示：顾客id、顾客姓名、订单集合 `List<UserOrders>`
+  * 第4题：<font color=red>**使用resultMap**</font>根据客户编号查询某个客户的 **姓名和电话**，结果：`CustomersVO1`
 
-  * 第4题：根据客户编号查询某个客户的 **姓名和电话**，结果：`CustomersVO1`
-
-  * 第5题：查询指定城市的客户的 **姓名和地址**，结果集放到 List集合 中，
+  * 第5题：<font color=red>**使用resultMap**</font>查询指定城市的客户的 **姓名和地址**，结果集放到 List集合 中，
 
     ​             比如查询北京的客户信息：`CustomersVO2`
 

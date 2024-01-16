@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS mvcdb DEFAULT CHARSET = UTF8;
+USE mvcdb;
+DROP TABLE IF EXISTS user;
+CREATE TABLE user
+(
+    id       INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50),
+    password VARCHAR(50),
+    nickname VARCHAR(50),
+    created  TIMESTAMP
+);
