@@ -13,7 +13,7 @@ public class CartsController {
      * 接受数据的方式1：通过HttpServletRequest
      * <p>
      * 1.GET方式
-     * http://localhost:8080/v1/users/carts/addProduct?title=huaweimate50&price=8000
+     * <a href="http://localhost:8080/v1/users/carts/addProduct?title=huaweimate50&price=8000">测试链接</a>
      * <p>
      * 2.POST方式
      * <input type="text" name="title">
