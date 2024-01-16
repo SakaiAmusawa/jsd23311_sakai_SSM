@@ -9,27 +9,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BMIController {
 
     /**
-     * <a href="http://localhost:8080/bmi2?kg=50&high=1.75">测试链接</a>
+     * <a href="http://localhost:8080/bmi2?weight=50&height=1.75">测试链接</a>
      */
     @RequestMapping("/bmi")
     @ResponseBody
-    public String bmi(Double kg, Double high) {
-        return getBMI(kg, high);
+    public String bmi(Double weight, Double height) {
+        return getBMI(weight, height);
     }
 
     /**
-     * <a href= http://localhost:8080/bmi2?kg=90&high=1.75>测试链接</a>
+     * <a href= http://localhost:8080/bmi2?weight=90&height=1.75>测试链接</a>
      */
     @RequestMapping("/bmi2")
     @ResponseBody
     public String bmi2(BMIDTO bmidto) {
-        Double kg = bmidto.getKg();
-        Double high = bmidto.getHigh();
-        return getBMI(kg, high);
+        Double height = bmidto.getHeight();
+        Double weight = bmidto.getWeight();
+        return getBMI(weight, height);
     }
 
-    private String getBMI(Double kg, Double high) {
-        double bmi = kg / (high * high);
+    private String getBMI(Double weight, Double height) {
+        double bmi = weight / (height * height);
         String result;
         if (bmi < 18.5) {
             result = "偏瘦";

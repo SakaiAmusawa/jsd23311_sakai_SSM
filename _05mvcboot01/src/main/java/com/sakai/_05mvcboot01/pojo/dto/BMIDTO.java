@@ -1,54 +1,51 @@
 package com.sakai._05mvcboot01.pojo.dto;
 
 public class BMIDTO {
-    private Double kg;
-    private Double high;
+    private Double weight;
+    private Double height;
+
 
     public BMIDTO() {
     }
 
-    public BMIDTO(Double kg, Double high) {
-        this.kg = kg;
-        this.high = high;
+    public BMIDTO(Double weight, Double height) {
+        this.weight = weight;
+        this.height = height;
     }
 
     /**
      * 获取
-     *
-     * @return kg
+     * @return weight
      */
-    public Double getKg() {
-        return kg;
+    public Double getWeight() {
+        return weight;
     }
 
     /**
      * 设置
-     *
-     * @param kg
+     * @param weight
      */
-    public void setKg(Double kg) {
-        this.kg = kg;
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 
     /**
      * 获取
-     *
-     * @return high
+     * @return height
      */
-    public Double getHigh() {
-        return high;
+    public Double getHeight() {
+        return height;
     }
 
     /**
      * 设置
-     *
-     * @param high
+     * @param height
      */
-    public void setHigh(Double high) {
-        this.high = high;
+    public void setHeight(Double height) {
+        this.height = height;
     }
 
     public String toString() {
-        return "BMIDTO{kg = " + kg + ", high = " + high + "}";
+        return "BMIDTO{weight = " + weight + ", height = " + height + "}";
     }
 }
