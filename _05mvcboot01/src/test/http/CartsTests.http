@@ -1,0 +1,15 @@
+###更新购物车测试
+POST http://localhost:8080/v1/carts/update
+Content-Type: application/x-www-form-urlencoded
+
+title = 橙子 &
+price = 6.5 &
+number = 100
+
+###删除购车测试
+GET http://localhost:8080/v1/carts/delete?username=猴子&id=24
+Accept: application/json
+
+###添加购物车测试
+GET http://localhost:8080/v1/users/carts/addProduct?title=西瓜&price=5.0
+Accept: application/json
