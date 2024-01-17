@@ -6,20 +6,23 @@ import com.sakai._05mvcboot02.pojo.entity.User;
 import com.sakai._05mvcboot02.pojo.vo.UserListVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.List;
 
-@Controller
+/*@Controller
+@ResponseBody
+这两个注解等效与下面的注解
+*/
+@RestController//组合注解
+@RequestMapping("/v1/users/")
 public class UserController {
     @Autowired
     private UserMapper userMapper;
 
-    @RequestMapping("/v1/users/insert")
-    @ResponseBody
+    @RequestMapping("insert")
     public String insert(AddUserDto addUserDto) {
         /*
             用户将：用户名、密码、昵称 数据传递给服务端，服务端处理请求并将数据存入数据表。
@@ -37,8 +40,7 @@ public class UserController {
         return "添加用户成功";
     }
 
-    @RequestMapping("/v1/users/userList")
-    @ResponseBody
+    @RequestMapping("userList")
     public List<UserListVO> selectUser() {
         /*
         请求地址：/v1/users/userList
@@ -49,8 +51,7 @@ public class UserController {
         return userMapper.selectUser();
     }
 
-    @RequestMapping("/v1/users/delete")
-    @ResponseBody
+    @RequestMapping("delete")
     public String deleteUser(Integer id) {
         /*
         请求地址：/v1/users/delete?id=用户id
@@ -62,8 +63,7 @@ public class UserController {
         return "删除成功";
     }
 
-    @RequestMapping("/v1/users/update")
-    @ResponseBody
+    @RequestMapping("update")
     public String updateUser(User user) {
         /*
         请求地址：/v1/users/update
