@@ -7,4 +7,15 @@
         INSERT INTO mvcdb.user(username, password, nickname, created)
         VALUES (#{username}, #{password}, #{nickname}, #{created})
     </insert>
+
+    <select id="selectUser" resultType="com.sakai._05mvcboot02.pojo.vo.UserListVO">
+        SELECT username, password
+        FROM mvcdb.user
+    </select>
+
+    <delete id="deleteUser">
+        DELETE
+        FROM mvcdb.user
+        WHERE id = #{id}
+    </delete>
 </mapper>

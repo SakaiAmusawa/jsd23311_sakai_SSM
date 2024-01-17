@@ -1,8 +1,16 @@
+GET http://localhost:8080/v1/users/delete?id = 2
+Accept: application/json
+
+###
+GET http://localhost:8080/v1/users/userList
+Accept: application/json
+
+###
 POST http://localhost:8080/v1/users/insert
 Content-Type: application/x-www-form-urlencoded
 
-username = zjw &
+username = hello &
 password = 123 &
-nickname = sakai
+nickname = fku
 
 ###
