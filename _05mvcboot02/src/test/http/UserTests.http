@@ -1,0 +1,8 @@
+POST http://localhost:8080/v1/users/insert
+Content-Type: application/x-www-form-urlencoded
+
+username = zjw &
+password = 123 &
+nickname = sakai
+
+###

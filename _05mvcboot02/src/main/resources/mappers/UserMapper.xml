@@ -3,5 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sakai._05mvcboot02.mapper.UserMapper">
-
+    <insert id="insertUser">
+        INSERT INTO mvcdb.user(username, password, nickname, created)
+        VALUES (#{username}, #{password}, #{nickname}, #{created})
+    </insert>
 </mapper>
