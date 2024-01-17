@@ -40,6 +40,12 @@ public class UserController {
     @RequestMapping("/v1/users/userList")
     @ResponseBody
     public List<UserListVO> selectUser() {
+        /*
+        请求地址：/v1/users/userList
+        请求方法：GET
+        查询参数：无
+        返回响应：List<UserListVO> 显示: 用户名username 和 密码password
+         */
         return userMapper.selectUser();
     }
 
