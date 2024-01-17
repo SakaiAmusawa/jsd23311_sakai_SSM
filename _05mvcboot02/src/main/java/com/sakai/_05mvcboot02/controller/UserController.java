@@ -71,10 +71,6 @@ public class UserController {
         请求体数据：用户id、用户名username、密码password、昵称nickname、时间created
         返回响应：String "修改成功"
          */
-        Integer id = user.getId();
-        String username = user.getUsername();
-        String nickname = user.getNickname();
-        String password = user.getPassword();
         user.setCreated(new Date());
         userMapper.updateUser(user);
 
