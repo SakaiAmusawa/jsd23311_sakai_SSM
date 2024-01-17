@@ -14,6 +14,7 @@ public class ProductVO1 {
 
     /**
      * 获取
+     *
      * @return title
      */
     public String getTitle() {
@@ -22,6 +23,7 @@ public class ProductVO1 {
 
     /**
      * 设置
+     *
      * @param title
      */
     public void setTitle(String title) {
@@ -30,6 +32,7 @@ public class ProductVO1 {
 
     /**
      * 获取
+     *
      * @return price
      */
     public Double getPrice() {
@@ -38,6 +41,7 @@ public class ProductVO1 {
 
     /**
      * 设置
+     *
      * @param price
      */
     public void setPrice(Double price) {

@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-	<pluginGroups>
-	</pluginGroups>
+    <pluginGroups>
+    </pluginGroups>
 
-	<proxies>
-	</proxies>
+    <proxies>
+    </proxies>
 
-	<servers>
-	</servers>
+    <servers>
+    </servers>
 
-	<mirrors>
+    <mirrors>
 
-		<mirror>
-			<id>ali</id>
-			<name>ali Maven</name>
-			<mirrorOf>*</mirrorOf>
-			<url>https://maven.aliyun.com/repository/public/</url>
-		</mirror>
+        <mirror>
+            <id>ali</id>
+            <name>ali Maven</name>
+            <mirrorOf>*</mirrorOf>
+            <url>https://maven.aliyun.com/repository/public/</url>
+        </mirror>
 
-	</mirrors>
-	<profiles>
+    </mirrors>
+    <profiles>
 
-	</profiles>
-	<activeProfiles>
-	</activeProfiles>
-
+    </profiles>
+    <activeProfiles>
+    </activeProfiles>
 
 
 </settings>

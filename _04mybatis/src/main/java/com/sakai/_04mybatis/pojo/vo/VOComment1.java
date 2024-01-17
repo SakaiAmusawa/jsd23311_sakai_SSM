@@ -16,6 +16,7 @@ public class VOComment1 {
 
     /**
      * 获取
+     *
      * @return content
      */
     public String getContent() {
@@ -24,6 +25,7 @@ public class VOComment1 {
 
     /**
      * 设置
+     *
      * @param content
      */
     public void setContent(String content) {
@@ -32,6 +34,7 @@ public class VOComment1 {
 
     /**
      * 获取
+     *
      * @return userId
      */
     public Long getUserId() {
@@ -40,6 +43,7 @@ public class VOComment1 {
 
     /**
      * 设置
+     *
      * @param userId
      */
     public void setUserId(Long userId) {
@@ -48,6 +52,7 @@ public class VOComment1 {
 
     /**
      * 获取
+     *
      * @return weiboId
      */
     public Long getWeiboId() {
@@ -56,6 +61,7 @@ public class VOComment1 {
 
     /**
      * 设置
+     *
      * @param weiboId
      */
     public void setWeiboId(Long weiboId) {

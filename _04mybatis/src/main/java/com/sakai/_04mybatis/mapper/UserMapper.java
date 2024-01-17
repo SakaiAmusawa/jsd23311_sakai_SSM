@@ -1,7 +1,6 @@
 package com.sakai._04mybatis.mapper;
 
 import com.sakai._04mybatis.pojo.entity.User;
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

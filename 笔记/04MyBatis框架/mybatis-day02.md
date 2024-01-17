@@ -6,11 +6,12 @@
 
 MyBatis框架提供了注解方式和xml配置文件两种方式操作数据库；
 
-* 注解方式：简单清晰，但是和 `java` 代码耦合到一起，不利于后期`SQL`语句的统一优化和维护，适用于 <font color=red>**比较简单的工程**</font>，不太适合复杂的工程；
+* 注解方式：简单清晰，但是和 `java` 代码耦合到一起，不利于后期`SQL`语句的统一优化和维护，适用于 <font color=red>**比较简单的工程
+  **</font>，不太适合复杂的工程；
 * xml方式：<font color=red>**适用于复杂工程，比如：动态修改、动态删除等**</font>
-  * 将 `SQL` 语句和 `JAVA` 代码分离开；
-  * 支持动态 `SQL` 语句；
-  * 支持 `SQL` 语句的重用.
+    * 将 `SQL` 语句和 `JAVA` 代码分离开；
+    * 支持动态 `SQL` 语句；
+    * 支持 `SQL` 语句的重用.
 
 #### 1.2 编码流程
 
@@ -49,48 +50,48 @@ MyBatis框架提供了注解方式和xml配置文件两种方式操作数据库�
 
 * 增删改查标签
 
-  * 增删改
+    * 增删改
 
-    <font color=red>**返回值为int类型**</font>
+      <font color=red>**返回值为int类型**</font>
 
-    ```xml
-    1.<insert id=""></insert>
-    2.<delete id=""></delete>
-    3.<update id=""></update>
-    ```
+      ```xml
+      1.<insert id=""></insert>
+      2.<delete id=""></delete>
+      3.<update id=""></update>
+      ```
 
-  * 查
+    * 查
 
-    <font color=red>**返回值为 VO 类型**</font>
-    
-    ```xml
-    1.<select id="" resultType=""></select>
-    2.<select id="" resultMap=""></select>
-    ```
+      <font color=red>**返回值为 VO 类型**</font>
+
+      ```xml
+      1.<select id="" resultType=""></select>
+      2.<select id="" resultMap=""></select>
+      ```
 
 * 动态标签
 
-  * 动态删除
+    * 动态删除
 
-    ```xml
-    <!--
-    	1.collection属性：指定类型,数组为array,集合为list;
-    	2.item属性：变量名;
-    	3.separator属性：指定分隔符.
-    -->
-    <foreach collection="类型" item="变量名" separator="分隔符"></foreach>
-    ```
+      ```xml
+      <!--
+          1.collection属性：指定类型,数组为array,集合为list;
+          2.item属性：变量名;
+          3.separator属性：指定分隔符.
+      -->
+      <foreach collection="类型" item="变量名" separator="分隔符"></foreach>
+      ```
 
-  * 动态修改
+    * 动态修改
 
-    <font color=red>**注意 逗号 的问题**</font>
+      <font color=red>**注意 逗号 的问题**</font>
 
-    ```xml
-    <set>
-    	<if test="条件">字段名=#{属性名},</if>
-        <if test="条件">字段名=#{属性名}</if>
-    </set>
-    ```
+      ```xml
+      <set>
+          <if test="条件">字段名=#{属性名},</if>
+          <if test="条件">字段名=#{属性名}</if>
+      </set>
+      ```
 
 * 重用标签
 
@@ -112,9 +113,9 @@ MyBatis框架提供了注解方式和xml配置文件两种方式操作数据库�
 
   <font color=red>**解决思路：**</font>
 
-  * 第1步：查看配置文件 `application.properties`；
-  * 第2步：查看 `xml` 文件中的命名空间 `namespace`；
-  * 第3步：标签中的 `id` 属性值是否和 接口方法名一致.
+    * 第1步：查看配置文件 `application.properties`；
+    * 第2步：查看 `xml` 文件中的命名空间 `namespace`；
+    * 第3步：标签中的 `id` 属性值是否和 接口方法名一致.
 
 * **BeanCreationException**
 
@@ -126,30 +127,30 @@ MyBatis框架提供了注解方式和xml配置文件两种方式操作数据库�
 
   <font color=red>**解决思路：**</font>
 
-  * 第1步：到此行异常的末尾查看具体出问题的 `xml` 文件；
-  * 第2步：检查对应的 `xml` 文件修改即可.
+    * 第1步：到此行异常的末尾查看具体出问题的 `xml` 文件；
+    * 第2步：检查对应的 `xml` 文件修改即可.
 
 ### 4 常用快捷键
 
 - **复制文件完整路径**
 
-  - windows系统
+    - windows系统
 
-    - 没有Fn按键：**Ctrl + Shift + Alt + c**
-    - 有Fn按键：**Fn + Ctrl + Shift + Alt + c**
+        - 没有Fn按键：**Ctrl + Shift + Alt + c**
+        - 有Fn按键：**Fn + Ctrl + Shift + Alt + c**
 
-  - Mac系统
+    - Mac系统
 
-    **Command + Shift + c**
+      **Command + Shift + c**
 
 - **格式化代码**
 
   `Ctrl + Alt + l`
 
--  **代码折叠和打开**
+- **代码折叠和打开**
 
-  - 折叠代码: Ctrl + Shift + 减号
-  - 展开代码: Ctrl + Shift + 加号
+- 折叠代码: Ctrl + Shift + 减号
+- 展开代码: Ctrl + Shift + 加号
 
 
 

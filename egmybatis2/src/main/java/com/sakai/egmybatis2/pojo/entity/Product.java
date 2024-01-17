@@ -19,6 +19,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -27,6 +28,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -35,6 +37,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return title
      */
     public String getTitle() {
@@ -43,6 +46,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param title
      */
     public void setTitle(String title) {
@@ -51,6 +55,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return price
      */
     public Double getPrice() {
@@ -59,6 +64,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param price
      */
     public void setPrice(Double price) {
@@ -67,6 +73,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return stock
      */
     public Integer getStock() {
@@ -75,6 +82,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param stock
      */
     public void setStock(Integer stock) {

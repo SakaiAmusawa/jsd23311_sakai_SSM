@@ -105,7 +105,7 @@ Spring MVC 是 Java 编程语言中提供的基于 MVC 设计思想 的框架，
 
 - 传递数据: 通过 <font color=red>**查询参数**</font> 的方式传递
 
-  *
+    *
   *[http://localhost:8080/v1/users/login?username=xxx&password=xxx](https://gitee.com/link?target=http%3A%2F%2Flocalhost%3A8080%2Fv1%2Fusers%2Flogin%3Fusername%3Dxxx%26password%3Dxxx)
   **
 

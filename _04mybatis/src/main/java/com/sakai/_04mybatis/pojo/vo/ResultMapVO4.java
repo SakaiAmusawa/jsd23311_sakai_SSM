@@ -18,6 +18,7 @@ public class ResultMapVO4 {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -26,6 +27,7 @@ public class ResultMapVO4 {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -34,6 +36,7 @@ public class ResultMapVO4 {
 
     /**
      * 获取
+     *
      * @return content
      */
     public String getContent() {
@@ -42,6 +45,7 @@ public class ResultMapVO4 {
 
     /**
      * 设置
+     *
      * @param content
      */
     public void setContent(String content) {
@@ -50,6 +54,7 @@ public class ResultMapVO4 {
 
     /**
      * 获取
+     *
      * @return commentListVOS
      */
     public List<CommentListVO> getCommentListVOS() {
@@ -58,6 +63,7 @@ public class ResultMapVO4 {
 
     /**
      * 设置
+     *
      * @param commentListVOS
      */
     public void setCommentListVOS(List<CommentListVO> commentListVOS) {

@@ -74,25 +74,27 @@ Maven的坐标是用来唯一标识一个项目或构件的信息
 
 ### 5 重要网址
 
-- <font color=red>**Maven中央仓库地址**</font>：[https://mvnrepository.com/](https://gitee.com/link?target=https%3A%2F%2Fmvnrepository.com%2F)
-- Maven仓库资源地址：[https://repo1.maven.org/maven2/](https://gitee.com/link?target=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2F)
+- <font color=red>**Maven中央仓库地址
+  **</font>：[https://mvnrepository.com/](https://gitee.com/link?target=https%3A%2F%2Fmvnrepository.com%2F)
+-
+Maven仓库资源地址：[https://repo1.maven.org/maven2/](https://gitee.com/link?target=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2F)
 
 ### 6 仓库
 
 - 本地仓库: 本地计算机的 `repository` 目录下.
 - 远程仓库
-  - 中央仓库: Maven团队维护.
-  - 私服: 公司内部局域网范围内搭建的服务器.
+    - 中央仓库: Maven团队维护.
+    - 私服: 公司内部局域网范围内搭建的服务器.
 
 ### 7 Maven命令
 
-| 命令             | 作用                                                         |
-| ---------------- | ------------------------------------------------------------ |
-| mvn compile      | 编译主程序 `src/main`，生成target目录， 存放编译主程序生成的字节码文件，输出到 `target/classes` |
+| 命令               | 作用                                                                      |
+|------------------|-------------------------------------------------------------------------|
+| mvn compile      | 编译主程序 `src/main`，生成target目录， 存放编译主程序生成的字节码文件，输出到 `target/classes`       |
 | mvn test-compile | 编译测试程序 `src/test`，生成target目录， 存放编译测试程序生成的字节码文件，输出到`target/test-classes` |
-| mvn test         | 编写的测试代码并生成测试报告(目前对于后端开发没有太大作用)   |
-| mvn package      | 将项目打成jar包                                              |
-| mvn clean        | 清空项目本地编译目录                                         |
+| mvn test         | 编写的测试代码并生成测试报告(目前对于后端开发没有太大作用)                                          |
+| mvn package      | 将项目打成jar包                                                               |
+| mvn clean        | 清空项目本地编译目录                                                              |
 
 
 

@@ -15,6 +15,7 @@ public class BMIDTO {
 
     /**
      * 获取
+     *
      * @return weight
      */
     public Double getWeight() {
@@ -23,6 +24,7 @@ public class BMIDTO {
 
     /**
      * 设置
+     *
      * @param weight
      */
     public void setWeight(Double weight) {
@@ -31,6 +33,7 @@ public class BMIDTO {
 
     /**
      * 获取
+     *
      * @return height
      */
     public Double getHeight() {
@@ -39,6 +42,7 @@ public class BMIDTO {
 
     /**
      * 设置
+     *
      * @param height
      */
     public void setHeight(Double height) {

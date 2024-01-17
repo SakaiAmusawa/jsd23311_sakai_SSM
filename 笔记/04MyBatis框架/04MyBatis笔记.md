@@ -15,9 +15,9 @@
 * MyBatis
 
   `MyBatis` 是基于 Java 的持久层框架，用于和数据库映射；
-  
+
   `MyBatis` 避免了几乎所有的JDBC代码和手动设置参数以及获取结果集的工作；
-  
+
   `MyBatis` 通过注解方式或者xml配置文件的方式来配置SQL和映射关系，灵活性非常高。
 
 ### 2 SpringBoot
@@ -58,19 +58,17 @@
 
 1. 创建工程 **_04MYBATIS**
 
-   * 创建SpringBoot工程时需要将地址改为：https://start.aliyun.com
+    * 创建SpringBoot工程时需要将地址改为：https://start.aliyun.com
 
-   * 选择SpringBoot来创建工程：**Spring Initalizr**
+    * 选择SpringBoot来创建工程：**Spring Initalizr**
 
-     ![image-20230612190023245](./images/image-20230612190023245.png)
+      ![image-20230612190023245](./images/image-20230612190023245.png)
 
 2. **Spring Boot版本为2.6.13**
 
    **勾选依赖项：MyBatis Framework 和 MySQL Driver**
 
    ![image-20230718073053060](./images/image-20230718073053060.png)
-
-
 
 #### 3.2 创建工程失败排查
 
@@ -80,19 +78,17 @@
 
 * 如果没有显示绿色对钩而是红色报错，解决方案如下
 
-  * 检查maven配置
+    * 检查maven配置
 
-    ![image-20230420184116832](./images/image-20230420184116832.png)
+      ![image-20230420184116832](./images/image-20230420184116832.png)
 
-  * 刷新maven
+    * 刷新maven
 
-    ![image-20230421093025690](./images/image-20230421093025690.png)
+      ![image-20230421093025690](./images/image-20230421093025690.png)
 
-  * 如果刷新之后还没有成功
+    * 如果刷新之后还没有成功
 
-    检查Maven配置是否正确，检查 .m2 目录下是否包含 settings.xml 文件
-
-
+      检查Maven配置是否正确，检查 .m2 目录下是否包含 settings.xml 文件
 
 ## MyBatis框架-注解管理
 
@@ -106,7 +102,7 @@ Mybatis框架的简单应用架构，如图所示：
 
 ![](./images/mybatis.png)
 
-​		
+​
 
 ### 2 数据初始化
 
@@ -118,17 +114,17 @@ Mybatis框架的简单应用架构，如图所示：
 
 * 数据表说明
 
-  * 用户表user：存储微博用户信息；
+    * 用户表user：存储微博用户信息；
 
-  * 微博表weibo：存储用户所发布的微博信息内容；
+    * 微博表weibo：存储用户所发布的微博信息内容；
 
-  * 评论表comment：存储每条微博的所有评论。
+    * 评论表comment：存储每条微博的所有评论。
 
 * 表关系说明
 
-  * 用户表和微博表：一对多，一个用户可以发布多条微博，一条微博只能归属于一个用户；
-  * 用户表和评论表：一对多，一个用户可以发布多条评论，一条评论只能归属于一个用户；
-  * 微博表和评论表：一对多，一条微博下可以有多条评论，一条评论只能归于与一条微博。
+    * 用户表和微博表：一对多，一个用户可以发布多条微博，一条微博只能归属于一个用户；
+    * 用户表和评论表：一对多，一个用户可以发布多条评论，一条评论只能归属于一个用户；
+    * 微博表和评论表：一对多，一条微博下可以有多条评论，一条评论只能归于与一条微博。
 
 * 初始化数据表
 
@@ -176,7 +172,6 @@ Mybatis框架的简单应用架构，如图所示：
   INSERT INTO comment VALUES (304, 'jim对第2条微博的评论', '2008-01-01 00:00:00', 102, 201);
   
   ```
-
 
 ### 3 环境说明
 
@@ -239,7 +234,8 @@ public class User {
 
 * @Mapper注解
 
-  是由MyBatis框架提供，用于描述数据层接口，告诉系统底层为此接口创建其实现类，在实现类中定义数据访问逻辑，执行与数据库的会话(交互)
+  是由MyBatis框架提供，用于描述数据层接口，告诉系统底层为此接口创建其实现类，在实现类中定义数据访问逻辑，执行与数据库的会话(
+  交互)
 
 * @Insert注解
 
@@ -249,7 +245,8 @@ public class User {
 
   `#{}` 是 MyBatis 框架中用来表示占位符的语法。
 
-  在 `@Insert` 注解中，`#{} `所代表的是一个占位符，它可以接受 Java 对象作为输入参数，并将其转换为预编译的 SQL 语句中的参数。使用 `#{} `可以帮助我们避免 SQL 注入等问题，同时也让 SQL 写起来更加简单。
+  在 `@Insert` 注解中，`#{} `所代表的是一个占位符，它可以接受 Java 对象作为输入参数，并将其转换为预编译的 SQL
+  语句中的参数。使用 `#{} `可以帮助我们避免 SQL 注入等问题，同时也让 SQL 写起来更加简单。
 
 ```java
 @Mapper
@@ -281,8 +278,6 @@ void testInsert(){
     System.out.println(userMapper.insert(user));
 }
 ```
-
-
 
 ### 6 整合MyBatis完成标签业务操作
 
@@ -447,8 +442,6 @@ public class Comment {
 6. **查询:  `selectCommentById1`，根据评论的id查询评论的 内容、用户ID、微博ID（数据库表中确认）**
 7. **查询 `selectCommentById2`，根据微博的id查询评论的 内容、用户ID（数据库表中确认）**
 
-
-
 ## MyBatis框架-xml管理（重点）
 
 ### 1 xml与注解比较
@@ -461,12 +454,11 @@ XML的语法严格，每个标签都必须有一个结束标签，标签的嵌�
 
 #### 1.2 和SQL注解比较
 
+* xml配置SQL，可以将SQL语句和JAVA代码分离开
 
-  * xml配置SQL，可以将SQL语句和JAVA代码分离开
+* xml配置SQL，支持动态SQL语句
 
-  * xml配置SQL，支持动态SQL语句
-
-  * xml配置SQL，支持SQL语句的复用
+* xml配置SQL，支持SQL语句的复用
 
 ### 2 环境初始化
 
@@ -476,9 +468,9 @@ XML的语法严格，每个标签都必须有一个结束标签，标签的嵌�
 
 * 依赖项
 
-  * MyBatis Framework
+    * MyBatis Framework
 
-  * MySQL Driver
+    * MySQL Driver
 * 注释掉 **UserMapper、WeiboMapper、CommentMapper中的所有 @Insert() @Update() @Select() @Delete 注解**
 
 ### 3 使用流程
@@ -510,33 +502,32 @@ XML的语法严格，每个标签都必须有一个结束标签，标签的嵌�
 
 * 常用的SQL标签
 
-  * select
+    * select
 
-    用于查询操作，包括多表查询、条件查询等。可以使用 resultType 来指定返回结果的类型。
+      用于查询操作，包括多表查询、条件查询等。可以使用 resultType 来指定返回结果的类型。
 
-  * insert
+    * insert
 
-    用于插入操作，并将其自动注入实体类中。
+      用于插入操作，并将其自动注入实体类中。
 
-  * update
+    * update
 
-    用于更新操作，包括更新一条记录或者批量更新。
+      用于更新操作，包括更新一条记录或者批量更新。
 
-  * delete
+    * delete
 
-    用于删除操作，包括删除一条记录或者批量删除。
+      用于删除操作，包括删除一条记录或者批量删除。
 
-  * if、foreach、set
+    * if、foreach、set
 
-    用于条件控制，可以根据不同的条件进行查询、插入、更新和删除操作。if 标签用于指定可以为空的查询条件，foreach 标签用于循环查询，set 标签用于指定更新操作的字段值。
+      用于条件控制，可以根据不同的条件进行查询、插入、更新和删除操作。if 标签用于指定可以为空的查询条件，foreach 标签用于循环查询，set
+      标签用于指定更新操作的字段值。
 
-  * sql：用于定义可重用的 SQL 片段，通常是一些较为复杂的 SQL 片段。可以在其它 SQL 语句中使用 include 标签来引用 SQL 片段。
+    * sql：用于定义可重用的 SQL 片段，通常是一些较为复杂的 SQL 片段。可以在其它 SQL 语句中使用 include 标签来引用 SQL 片段。
 
-  * include：用于引入外部的 SQL 片段。可以在 include 标签的 refid 属性中指定外部 SQL 片段的名字，然后在当前 SQL 中使用它。
+    * include：用于引入外部的 SQL 片段。可以在 include 标签的 refid 属性中指定外部 SQL 片段的名字，然后在当前 SQL 中使用它。
 
-  
-
-  ​		这些 SQL 标签可以随意组合，可以使 SQL 语句变得很灵活和强大。通常需要根据实际业务场景选择合适的标签来实现相应的 SQL 操作。
+​ 这些 SQL 标签可以随意组合，可以使 SQL 语句变得很灵活和强大。通常需要根据实际业务场景选择合适的标签来实现相应的 SQL 操作。
 
 ### 5 整合MyBatis完成用户数据操作
 
@@ -744,8 +735,7 @@ void deleteByIdTest(){
 
   动态SQL是指在程序运行时动态生成SQL语句的技术。它允许开发人员在程序运行时根据不同的条件拼接SQL语句，从而灵活地构建各种查询。
 
-
-​	<font color=red>DELETE FROM comment WHERE id in(2,3,5)  此处id的值不确定，数量也不确定！</font>
+​    <font color=red>DELETE FROM comment WHERE id in(2,3,5)此处id的值不确定，数量也不确定！</font>
 
 #### 8.1 动态删除数据
 
@@ -823,7 +813,7 @@ void delete3(){
   使用xml中的 `<set></set>`  和 `<if></if>` 标签组合
 
   语法示例：
-  
+
   ```xml
   <update id="dynamicUpdate">
       UPDATE product
@@ -835,7 +825,6 @@ void delete3(){
       WHERE id=#{id};
   </update>
   ```
-
 
 ##### 8.1.1 Dao接口设计
 
@@ -875,8 +864,6 @@ void dynamicUpdateTest(){
     commentMapper.dynamicUpdate(comment);
 }
 ```
-
-
 
 ### 9 SQL语句重用
 
@@ -921,7 +908,7 @@ SQL语句重用是指在数据库应用程序中，多次执行相同或类似�
        )
    </delete>
    ```
-   
+
 2. 执行对应的测试用例测试
 
 ### 10 多表联查
@@ -941,41 +928,41 @@ SQL语句重用是指在数据库应用程序中，多次执行相同或类似�
 
 * 实现
 
-  1. mapper.WeiboMapper
+    1. mapper.WeiboMapper
 
-     ```java
-     // 首页微博列表数据
-     List<WeiboIndexVO> selectIndex();
-     ```
+       ```java
+       // 首页微博列表数据
+       List<WeiboIndexVO> selectIndex();
+       ```
 
-  2. mappers.WeiboMapper.xml
+    2. mappers.WeiboMapper.xml
 
-     ```xml
-     <select id="selectIndex" resultType="cn.tedu.weibo.pojo.vo.WeiboIndexVO">
-         SELECT w.id, w.content, u.nickname 
-         FROM weibo w JOIN user u ON w.user_id=u.id;
-     </select>
-     ```
+       ```xml
+       <select id="selectIndex" resultType="cn.tedu.weibo.pojo.vo.WeiboIndexVO">
+           SELECT w.id, w.content, u.nickname 
+           FROM weibo w JOIN user u ON w.user_id=u.id;
+       </select>
+       ```
 
-  3. pojo.vo.WeiboIndexVO
+    3. pojo.vo.WeiboIndexVO
 
-     ```java
-     public class WeiboIndexVO {
-         // 显示微博的id content , 再显示一个nickname
-         private Integer id;
-         private String content;
-         private String nickname;
-     }
-     ```
+       ```java
+       public class WeiboIndexVO {
+           // 显示微博的id content , 再显示一个nickname
+           private Integer id;
+           private String content;
+           private String nickname;
+       }
+       ```
 
-  4. 测试方法
+    4. 测试方法
 
-     ```java
-     @Test
-     void weiboIndexTest(){
-         System.out.println(weiboMapper.selectIndex());
-     }
-     ```
+       ```java
+       @Test
+       void weiboIndexTest(){
+           System.out.println(weiboMapper.selectIndex());
+       }
+       ```
 
 #### 10.2 微博详情页展示
 
@@ -994,43 +981,43 @@ SQL语句重用是指在数据库应用程序中，多次执行相同或类似�
 
 * 实现
 
-  1. mapper.WeiboMapper
+    1. mapper.WeiboMapper
 
-     ```java
-     // 微博详情页数据
-     WeiboDetailVO selectById(int id);
-     ```
+       ```java
+       // 微博详情页数据
+       WeiboDetailVO selectById(int id);
+       ```
 
-  2. mappers.WeiboMapper.xml
+    2. mappers.WeiboMapper.xml
 
-     ```xml
-     <select id="selectById" resultType="cn.tedu.weibo.pojo.vo.WeiboDetailVO">
-         SELECT w.id, w.content, w.created, u.nickname
-         FROM weibo w JOIN user u ON w.user_id=u.id
-         WHERE w.id=#{id}
-     </select>
-     ```
+       ```xml
+       <select id="selectById" resultType="cn.tedu.weibo.pojo.vo.WeiboDetailVO">
+           SELECT w.id, w.content, w.created, u.nickname
+           FROM weibo w JOIN user u ON w.user_id=u.id
+           WHERE w.id=#{id}
+       </select>
+       ```
 
-  3. pojo.vo.WeiboDetailVO
+    3. pojo.vo.WeiboDetailVO
 
-     ```java
-     public class WeiboDetailVO {
-         // 原则：用啥查啥
-         private Integer id;
-         private String content;
-         private Date created;
-         private String nickname;
-     }
-     ```
-     
-  4. 测试方法
-  
-     ```java
-     @Test
-     void weiboDetialTest(){
-         System.out.println(weiboMapper.selectById(1));
-     }
-     ```
+       ```java
+       public class WeiboDetailVO {
+           // 原则：用啥查啥
+           private Integer id;
+           private String content;
+           private Date created;
+           private String nickname;
+       }
+       ```
+
+    4. 测试方法
+
+       ```java
+       @Test
+       void weiboDetialTest(){
+           System.out.println(weiboMapper.selectById(1));
+       }
+       ```
 
 #### 10.3 微博详情页中评论展示
 
@@ -1047,44 +1034,42 @@ SQL语句重用是指在数据库应用程序中，多次执行相同或类似�
 
 * 实现
 
-  1. mapper.WeiboMapper
+    1. mapper.WeiboMapper
 
-     ```java
-     // 微博详情页评论数据
-     List<CommentVO> selectByWeiboId(int id);
-     ```
+       ```java
+       // 微博详情页评论数据
+       List<CommentVO> selectByWeiboId(int id);
+       ```
 
-  2. mappers.WeiboMapper.xml
+    2. mappers.WeiboMapper.xml
 
-     ```xml
-     <select id="selectByWeiboId" resultType="cn.tedu.weibo.pojo.vo.CommentVO">
-         SELECT c.id,c.content,c.created,u.nickname
-         FROM comment c JOIN user u ON c.user_id=u.id
-         WHERE weibo_id=#{id}
-     </select>
-     ```
+       ```xml
+       <select id="selectByWeiboId" resultType="cn.tedu.weibo.pojo.vo.CommentVO">
+           SELECT c.id,c.content,c.created,u.nickname
+           FROM comment c JOIN user u ON c.user_id=u.id
+           WHERE weibo_id=#{id}
+       </select>
+       ```
 
-  3. pojo.vo.CommentVO
+    3. pojo.vo.CommentVO
 
-     ```java
-     public class CommentVO {
-         private Integer id;
-         private String content;
-         private Date created;
-         private String nickname;
-     }
-     ```
-     
-  4. 测试方法
-  
-     ```java
-     @Test
-     void selectByWeiboIdTest(){
-         System.out.println(weiboMapper.selectByWeiboId(1));
-     }
-     ```
+       ```java
+       public class CommentVO {
+           private Integer id;
+           private String content;
+           private Date created;
+           private String nickname;
+       }
+       ```
 
+    4. 测试方法
 
+       ```java
+       @Test
+       void selectByWeiboIdTest(){
+           System.out.println(weiboMapper.selectByWeiboId(1));
+       }
+       ```
 
 ### 11 ResultMap
 
@@ -1095,17 +1080,17 @@ resultMap属性是用来定义查询结果和Java对象属性之间的映射关�
 #### 11.1 常用标签及属性说明
 
 * `<resultMap>标签`
-  * `id` 属性：唯一标识
-  * `type` 属性：指定映射的JAVA类型
+    * `id` 属性：唯一标识
+    * `type` 属性：指定映射的JAVA类型
 * `<id>标签` ：指定映射的主键字段，包含 `column属性` 和 `property属性`
-  * `column属性` ：查询语句中的列名（或别名）
-  * `property属性` ：JAVA对象中的属性名
+    * `column属性` ：查询语句中的列名（或别名）
+    * `property属性` ：JAVA对象中的属性名
 * `<result>标签` ：指定映射的非主键字段，包含 `column属性` 和 `property属性`
-  * `column属性` ：查询语句中的列名（或别名）
-  * `property属性` ：JAVA对象中的属性名
+    * `column属性` ：查询语句中的列名（或别名）
+    * `property属性` ：JAVA对象中的属性名
 * `<collection>标签` ：映射一对多或多对多关系
-  * `property属性` ：JAVA对象中的属性名
-  * `ofType属性` ：集合中元素的类型
+    * `property属性` ：JAVA对象中的属性名
+    * `ofType属性` ：集合中元素的类型
 
 #### 11.2 单表
 
@@ -1115,7 +1100,7 @@ resultMap属性是用来定义查询结果和Java对象属性之间的映射关�
 
 第2步：创建VO类 **WeiboMapVO1**
 
-第3步：配置xml 
+第3步：配置xml
 
 ![image-20230616145958657](./images/image-20230616145958657-16886378107041.png)
 
@@ -1155,8 +1140,6 @@ void selectMapByIdTest(){
 ```
 
 ![image-20230616160457901](./images/image-20230616160457901-16886378107052.png)
-
-
 
 #### 11.3 多表
 
@@ -1231,8 +1214,6 @@ void selectMapByUserIdTest(){
 
 ![image-20230616160250243](./images/image-20230616160250243-16886378107053.png)
 
-
-
 #### 11.4 何时使用 ResultMap
 
 在实际应用中，使用 `ResultMap` 主要针对复杂的查询场景，
@@ -1240,8 +1221,6 @@ void selectMapByUserIdTest(){
 例如：多表关联查询、一对多、多对多查询等；
 
 此时，使用 `ResultMap` 可以将查询结果中的数据转化为对象，方便后续的业务处理。
-
-
 
 ## 课堂练习
 

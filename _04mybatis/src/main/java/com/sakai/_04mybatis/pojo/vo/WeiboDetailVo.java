@@ -21,6 +21,7 @@ public class WeiboDetailVo {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -29,6 +30,7 @@ public class WeiboDetailVo {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -37,6 +39,7 @@ public class WeiboDetailVo {
 
     /**
      * 获取
+     *
      * @return content
      */
     public String getContent() {
@@ -45,6 +48,7 @@ public class WeiboDetailVo {
 
     /**
      * 设置
+     *
      * @param content
      */
     public void setContent(String content) {
@@ -53,6 +57,7 @@ public class WeiboDetailVo {
 
     /**
      * 获取
+     *
      * @return created
      */
     public Date getCreated() {
@@ -61,6 +66,7 @@ public class WeiboDetailVo {
 
     /**
      * 设置
+     *
      * @param created
      */
     public void setCreated(Date created) {
@@ -69,6 +75,7 @@ public class WeiboDetailVo {
 
     /**
      * 获取
+     *
      * @return nickName
      */
     public String getNickName() {
@@ -77,6 +84,7 @@ public class WeiboDetailVo {
 
     /**
      * 设置
+     *
      * @param nickName
      */
     public void setNickName(String nickName) {

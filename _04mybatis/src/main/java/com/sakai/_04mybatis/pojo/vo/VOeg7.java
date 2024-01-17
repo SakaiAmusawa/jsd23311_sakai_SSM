@@ -19,6 +19,7 @@ public class VOeg7 {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -27,6 +28,7 @@ public class VOeg7 {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -35,6 +37,7 @@ public class VOeg7 {
 
     /**
      * 获取
+     *
      * @return content
      */
     public String getContent() {
@@ -43,6 +46,7 @@ public class VOeg7 {
 
     /**
      * 设置
+     *
      * @param content
      */
     public void setContent(String content) {
@@ -51,6 +55,7 @@ public class VOeg7 {
 
     /**
      * 获取
+     *
      * @return created
      */
     public Date getCreated() {
@@ -59,6 +64,7 @@ public class VOeg7 {
 
     /**
      * 设置
+     *
      * @param created
      */
     public void setCreated(Date created) {

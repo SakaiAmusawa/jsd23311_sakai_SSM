@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS mybatisdb DEFAULT CHARSET=UTF8;
+CREATE DATABASE IF NOT EXISTS mybatisdb DEFAULT CHARSET = UTF8;
 USE mybatisdb;
 
 DROP TABLE IF EXISTS customers;
@@ -22,9 +22,8 @@ CREATE TABLE user_orders
     order_date   DATETIME,
     status       VARCHAR(10),
     products_num INT,
-    amt          DOUBLE(10, 2
-)
-    ) CHARSET=UTF8;
+    amt          DOUBLE(10, 2)
+) CHARSET = UTF8;
 INSERT INTO user_orders
 VALUES ('202301010001', '0001', '1999-01-01 00:00:00', '1', 2, 100);
 INSERT INTO user_orders

@@ -23,6 +23,7 @@ public class Comment {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -31,6 +32,7 @@ public class Comment {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -39,6 +41,7 @@ public class Comment {
 
     /**
      * 获取
+     *
      * @return content
      */
     public String getContent() {
@@ -47,6 +50,7 @@ public class Comment {
 
     /**
      * 设置
+     *
      * @param content
      */
     public void setContent(String content) {
@@ -55,6 +59,7 @@ public class Comment {
 
     /**
      * 获取
+     *
      * @return created
      */
     public Date getCreated() {
@@ -63,6 +68,7 @@ public class Comment {
 
     /**
      * 设置
+     *
      * @param created
      */
     public void setCreated(Date created) {
@@ -71,6 +77,7 @@ public class Comment {
 
     /**
      * 获取
+     *
      * @return userId
      */
     public Long getUserId() {
@@ -79,6 +86,7 @@ public class Comment {
 
     /**
      * 设置
+     *
      * @param userId
      */
     public void setUserId(Long userId) {
@@ -87,6 +95,7 @@ public class Comment {
 
     /**
      * 获取
+     *
      * @return weiboId
      */
     public Long getWeiboId() {
@@ -95,6 +104,7 @@ public class Comment {
 
     /**
      * 设置
+     *
      * @param weiboId
      */
     public void setWeiboId(Long weiboId) {

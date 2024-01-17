@@ -19,7 +19,7 @@
 
 ![image-20240110110315447](./images/image-20240110110315447.png)
 
-####  2.2 Spring版本
+#### 2.2 Spring版本
 
 - Spring6: 只支持 `JDK17` 及以上版本
 - Spring5: 支持 `JDK8-15` 版本,课程中采用: <font color=red>**5.3.24**</font>
@@ -78,8 +78,8 @@
 
 - 实现方式
 
-  - 注解方式构建IoC容器: `AnnotationConfigApplicationContext`
-  - xml配置文件方式构建IoC容器: `ClasspathXmlApplicationContext`
+    - 注解方式构建IoC容器: `AnnotationConfigApplicationContext`
+    - xml配置文件方式构建IoC容器: `ClasspathXmlApplicationContext`
 
   ![image-20240110165245456](./images/image-20240110165245456.png)
 
@@ -88,17 +88,17 @@
 #### 6.1 标识为Spring Bean注解
 
 - **Component**
-  - 添加在类上，创建Spring Bean对象；
-  - 不分层。
+    - 添加在类上，创建Spring Bean对象；
+    - 不分层。
 - **Controller**
-  - 添加在类上，创建Spring Bean对象；
-  - 控制器层：负责接收请求并返回响应。
+    - 添加在类上，创建Spring Bean对象；
+    - 控制器层：负责接收请求并返回响应。
 - **Service**
-  - 添加在类上，创建Spring Bean对象；
-  - 业务层：负责具体业务逻辑处理。
+    - 添加在类上，创建Spring Bean对象；
+    - 业务层：负责具体业务逻辑处理。
 - **Repository**
-  - 添加在类上，创建Spring Bean对象；
-  - 数据访问层：负责和数据库[**MySQL和MariaDB**]交互。
+    - 添加在类上，创建Spring Bean对象；
+    - 数据访问层：负责和数据库[**MySQL和MariaDB**]交互。
 
 #### 6.2 DI依赖注入注解
 
@@ -126,22 +126,22 @@
 
   **@Autowired注解和@Resource注解的区别**
 
-  - `@Resource` 注解是JDK的标准注解, `@Autowired` 注解是Spring框架的注解;
-  - <font color=red>**装配规则**</font>
-    - `@Autowired` 注解默认根据类型进行装配, 如果需要根据名称进行装配, 结合 `@Qualifier` 注解;
-    - `@Resource` 注解
-      - 默认根据名称进行装配[`@Resource` 注解的 `name` 参数];
-      - 如果未指定 `name` 参数, 则以 属性名作为`Bean`对象名称进行装配;
-      - 如果属性名和`Bean`对象名称也不一致, 则根据类型进行装配.
+    - `@Resource` 注解是JDK的标准注解, `@Autowired` 注解是Spring框架的注解;
+    - <font color=red>**装配规则**</font>
+        - `@Autowired` 注解默认根据类型进行装配, 如果需要根据名称进行装配, 结合 `@Qualifier` 注解;
+        - `@Resource` 注解
+            - 默认根据名称进行装配[`@Resource` 注解的 `name` 参数];
+            - 如果未指定 `name` 参数, 则以 属性名作为`Bean`对象名称进行装配;
+            - 如果属性名和`Bean`对象名称也不一致, 则根据类型进行装配.
 
-####  6.3 作用域注解
+#### 6.3 作用域注解
 
 - `@scope`
 
   作用域注解
 
-  - singleton: 单例模式[<font color=red>**默认**</font>],Bean对象只有1个, 创建IoC容器时,创建Bean对象;
-  - prototype: 多例模式,Bean对象有多个, 每次在IoC容器中获取Bean对象时[getBean(类名.class)], 才会创建Bean对象
+    - singleton: 单例模式[<font color=red>**默认**</font>],Bean对象只有1个, 创建IoC容器时,创建Bean对象;
+    - prototype: 多例模式,Bean对象有多个, 每次在IoC容器中获取Bean对象时[getBean(类名.class)], 才会创建Bean对象
 
   <font color=red>**平时写项目时,使用框架的单例模式.**</font>
 
@@ -155,7 +155,7 @@
 
   生命周期销毁方法，比如此对象存储到了IoC容器，那这个对象在IoC容器关闭之前会先执行这个生命周期的销毁方法。
 
-####  6.5 引入外部属性文件注解
+#### 6.5 引入外部属性文件注解
 
 - `@PropertySource`
 
@@ -197,11 +197,11 @@
 ### 10 常用快捷键
 
 - 复制完整路径
-  - Windows
-    - `Ctrl + Shift + Alt + c`
-    - `Fn + Ctrl + Shift + Alt + c`
-  - Mac
-    - `Command + Shift + c`
+    - Windows
+        - `Ctrl + Shift + Alt + c`
+        - `Fn + Ctrl + Shift + Alt + c`
+    - Mac
+        - `Command + Shift + c`
 
 ### 11 常见异常
 
@@ -213,8 +213,8 @@
 
   **解决方案：**
 
-  - 查看该类上是否添加标识为 `Spring` 组件的注解；
-  - 检查相关注解 `Spring Bean` 对象的名称是否一致；
+    - 查看该类上是否添加标识为 `Spring` 组件的注解；
+    - 检查相关注解 `Spring Bean` 对象的名称是否一致；
 
 - `NoUniqueBeanDefinitionException`
 

@@ -22,8 +22,6 @@ MVC是一种软件架构的思想，将软件按照模型、视图、控制器�
 
 ![image-20230616123631603](./images/image-20230616123631603.png)
 
-
-
 ### 1.2 Spring MVC
 
 ![](./images/image-20230614082427769.png)
@@ -36,8 +34,6 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 
 ![](./images/springmvc.png)
 
-
-
 1. 客户端发送请求至前端控制器DispatcherServlet；
 2. DispatcherServlet收到请求后，调用处理器映射器HandlerMapping；
 3. HandlerMapping根据请求URL找到具体的Controller；
@@ -45,8 +41,6 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 5. Controller处理请求，并返回ModelAndView；
 6. DispatcherServlet通过ViewReslover（视图解析器）确定负责显示数据的具体View；
 7. DispatcherServlet对View进行渲染视图（即将Model填充至视图组件中），并将完整的视图响应到客户端。
-
-
 
 ## 2 SpringMVC快速入门
 
@@ -79,8 +73,6 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 
   ![image-20230526112939487](./images/image-20230526112939487.png)
 
-
-
 ## 3 SpringMVC处理请求
 
 ### 3.1 请求分类及处理方式
@@ -94,7 +86,7 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 * 处理方式
 
   由服务器直接将请求的资源返回给客户端，服务器不处理任何逻辑，只是将预先准备好的资源返回给客户端。
-  
+
   ![image-20230721070919453](./images/image-20230721070919453.png)
 
 #### 3.1.2 动态请求
@@ -106,10 +98,8 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 * 处理方式
 
   由服务器从数据库中获取数据，并进行相应的逻辑处理后将处理结果返回客户端。
-  
+
   ![image-20230721071109180](./images/image-20230721071109180.png)
-
-
 
 ### 3.2 处理静态请求
 
@@ -122,8 +112,6 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 * 第2步：浏览器显示工程首页
 
 ![image-20230507191840214](./images/image-20230507191840214.png)
-
-
 
 #### 3.2.2 处理图片等请求
 
@@ -141,13 +129,13 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 
 #### 3.3.1 注解说明
 
-* `@Controller` 
+* `@Controller`
 
   添加在类上；
 
   表示该类是一个控制器，负责处理用户的请求，并将处理结果生成响应返回给客户端。
 
-* `@RequestMapping` 
+* `@RequestMapping`
 
   请求注解；
 
@@ -155,10 +143,10 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 
   将HTTP请求映射到控制器中的方法，指定处理请求的路径
 
-  * 控制器类上：为整个控制器指定一个基础路径
-  * 控制器方法上：指定相对于基础路径的具体路径
+    * 控制器类上：为整个控制器指定一个基础路径
+    * 控制器方法上：指定相对于基础路径的具体路径
 
-* `@ResponseBody` 
+* `@ResponseBody`
 
   响应注解；
 
@@ -166,15 +154,12 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 
   可以使控制器方法通过返回值的方式将响应返回给客户端。
 
-
 #### 3.3.2 示例
 
 <font color=red>**处理用户查询订单的请求**</font>
 
 * 请求地址：http://localhost:8080/selectOrder
 * 返回响应：String "查询订单成功~~"
-
-
 
 <font color=red>**实现**</font>
 
@@ -198,25 +183,21 @@ SpringMVC是一种基于MVC（模型-视图-控制器）模式的Web框架，它
 
   http://localhost:8080/selectOrder
 
-
-
 ### 3.4 常见问题
 
 * 工程已修改，但是浏览器刷新未出现效果
-  * 工程static目录下文件修改后必须 <font color=red>**Rebuild static**</font>
-  * 浏览器有之前页面的缓存，Shift + F5 刷新页面
+    * 工程static目录下文件修改后必须 <font color=red>**Rebuild static**</font>
+    * 浏览器有之前页面的缓存，Shift + F5 刷新页面
 * 404错误码代表找不到资源
-  * 找不到静态资源
-    * 检查请求的路径是否正确   
-    * 检查静态资源文件的存储位置是否在static里面  
-    * 选中static文件夹 ReBuild 重新编译再测试
-  * 找不到动态资源
+    * 找不到静态资源
+        * 检查请求的路径是否正确
+        * 检查静态资源文件的存储位置是否在static里面
+        * 选中static文件夹 ReBuild 重新编译再测试
+    * 找不到动态资源
 
-    - 检查请求的路径是否正确   
-    - 检查@Controller注解是否添加
-    - 检查@RequestMapping注解里面的处理路径是否正确 
-
-
+        - 检查请求的路径是否正确
+        - 检查@Controller注解是否添加
+        - 检查@RequestMapping注解里面的处理路径是否正确
 
 ## 4 HTTP
 
@@ -228,9 +209,9 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
 - 用途 ： 网页获取，数据的传输
 - 特点
-  - 应用层协议，使用tcp进行数据传输；
-  - 有丰富的请求类型；
-  - 可以传输的数据类型众多.
+    - 应用层协议，使用tcp进行数据传输；
+    - 有丰富的请求类型；
+    - 可以传输的数据类型众多.
 
 ### 4.2 访问网页流程
 
@@ -289,8 +270,6 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
   ![](./images/request.jpg)
 
-
-
 #### 4.3.2 HTTP响应 Response
 
 <font color=red>**服务端给浏览器发送的内容称为响应Response，一个响应包含三部分:响应行，响应头，响应体。**</font>
@@ -320,10 +299,12 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
   //Content-Length是用来告知浏览器响应正文的长度，单位是字节。
   ```
 
-  <font color=red>**`Content-Type` 是用来告知浏览器响应正文中的内容是什么类型的数据(图片，页面等等)不同的类型对应的值是不同，浏览器接收正文前会根据上述两个响应头来得知长度和类型从而读取出来做对应的处理以渲染给用户看。**</font>
+  <font color=red>**`Content-Type` 是用来告知浏览器响应正文中的内容是什么类型的数据(图片，页面等等)
+  不同的类型对应的值是不同，浏览器接收正文前会根据上述两个响应头来得知长度和类型从而读取出来做对应的处理以渲染给用户看。
+  **</font>
 
   | 文件类型 |  Content-Type对应的值  |
-  | :------: | :--------------------: |
+    | :------: | :--------------------: |
   |   html   |       text/html        |
   |   css    |        text/css        |
   |    js    | application/javascript |
@@ -341,7 +322,8 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
 #### 4.4.1 定义
 
-​	URL（Uniform Resource Locator）是互联网上 <font color=red>**统一资源定位符**</font> 的简称，用于标识和定位互联网上资源的地址。在Web浏览器中，URL是用于访问网页的地址。
+​ URL（Uniform Resource Locator）是互联网上 <font color=red>**统一资源定位符**</font>
+的简称，用于标识和定位互联网上资源的地址。在Web浏览器中，URL是用于访问网页的地址。
 
 #### 4.4.2 URL组成
 
@@ -371,9 +353,9 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
 #### 4.5.1 GET请求
 
-​	GET请求是HTTP协议中最常见的请求方式之一，<font color=red>**它用于从服务器获取数据**</font>。
+​ GET请求是HTTP协议中最常见的请求方式之一，<font color=red>**它用于从服务器获取数据**</font>。
 
-​	GET请求将查询参数附加在URL之后，通过“?”符号进行分隔。
+​ GET请求将查询参数附加在URL之后，通过“?”符号进行分隔。
 
 * 查询参数
 
@@ -385,8 +367,8 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
 * 注意事项
 
-  - GET请求的参数是可见的，因此在URL中传递敏感信息时需谨慎。
-  - GET请求的长度有限制，因为URL的长度有限制，因此当传递大量数据时，应考虑使用POST或其他方式。
+    - GET请求的参数是可见的，因此在URL中传递敏感信息时需谨慎。
+    - GET请求的长度有限制，因为URL的长度有限制，因此当传递大量数据时，应考虑使用POST或其他方式。
 
 * <font color=red>**发送GET请求**</font>
 
@@ -396,11 +378,12 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
 #### 4.5.2 POST请求
 
-​	POST请求是另一种常见的HTTP请求方式，它用于向服务器提交数据。与GET请求不同，POST请求将数据放在请求体（Request Body）中，而不是URL中。
+​ POST请求是另一种常见的HTTP请求方式，它用于向服务器提交数据。与GET请求不同，POST请求将数据放在请求体（Request
+Body）中，而不是URL中。
 
 * 请求体
 
-​	POST请求的请求体中包含要提交的数据。这些数据可以是JSON、XML或其他格式。请求体中的数据通过Content-Type头部指定。
+​ POST请求的请求体中包含要提交的数据。这些数据可以是JSON、XML或其他格式。请求体中的数据通过Content-Type头部指定。
 
 * 请求示例
 
@@ -413,9 +396,9 @@ HTTP协议是浏览器与服务器通讯的应用层协议，规定了浏览器�
 
 * 使用POST请求的注意事项
 
-  * POST请求的数据是私密的，不会显示在URL中，因此更适合传递敏感信息。
+    * POST请求的数据是私密的，不会显示在URL中，因此更适合传递敏感信息。
 
-  * POST请求的长度没有限制，可以提交大量的数据。
+    * POST请求的长度没有限制，可以提交大量的数据。
 
 * <font color=red>**发送POST请求**</font>
 
@@ -453,8 +436,6 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
 </form>
 ```
 
-
-
 ## 5 服务端接收参数
 
 ### 5.1 HttpServletRequest接收
@@ -464,7 +445,6 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
 * 在Java Web应用程序中，当客户端发送HTTP请求时，容器（例如Tomcat）会创建一个HttpServletRequest对象，该对象包含了客户端请求的所有信息，如请求的URL、请求方法、请求头、请求参数等。
 
 * 在请求处理过程中，开发人员可以使用HttpServletRequest对象来获取客户端发送过来的请求参数。通过调用HttpServletRequest的方法，可以获取请求的参数名称、参数值以及参数的数量等信息。
-
 
 以上述案例为准，客户端把用户名和密码信息传递给服务端，服务端接收传递过来的用户名和密码信息。
 
@@ -483,8 +463,6 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
   ```
 
 * 第2步：重启工程测试
-
-
 
 ### 5.2 声明参数接收
 
@@ -506,11 +484,10 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
 
 * 第2步：重启工程，执行测试脚本测试
 
-
-
 ### 5.3 声明POJO类接收
 
-如果客户端传递数据过多，通过 `HttpServletRequest` 方式接收复用性较差，通过 `声明参数接收` 又很繁琐；所以可以将数据封装到 `POJO类` 中来接收。
+如果客户端传递数据过多，通过 `HttpServletRequest` 方式接收复用性较差，通过 `声明参数接收`
+又很繁琐；所以可以将数据封装到 `POJO类` 中来接收。
 
 <font color=red>**操作步骤**</font>
 
@@ -538,8 +515,6 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
   ```
 
 * 第3步：重启工程后测试
-
-
 
 ## 6 HttpClient测试
 
@@ -573,7 +548,7 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
 
 ### 6.2 练习
 
-**使用当前工程实现：BMI身体质量指数测试  BMIController**
+**使用当前工程实现：BMI身体质量指数测试 BMIController**
 
 客户端将用户的 身高`height`和 体重`weight` 传递给服务端，服务端接收参数并计算用户的身体健康指数。
 
@@ -589,11 +564,9 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
 
 * 请求地址：/bmi
 * 请求方法：GET
-* 传递数据：height=用户身高   weight=体重
+* 传递数据：height=用户身高 weight=体重
 
-* 返回响应：String   偏瘦 | 正常 | 微胖 | 该减肥了
-
-
+* 返回响应：String 偏瘦 | 正常 | 微胖 | 该减肥了
 
 #### 6.2.2 步骤梳理
 
@@ -602,13 +575,11 @@ http://localhost:8080/v1/users/login?username=xxx&password=xxx
    在其中定义bmi方法处理 `/bmi `请求，在参数列表中通过 **声明变量的方式** 接收传递过来的身高和体重
 
 
-  2. 在bmi方法中通过bmi的计算公式得到结果，然后根据取值范围给客户端响应
+2. 在bmi方法中通过bmi的计算公式得到结果，然后根据取值范围给客户端响应
 
-     偏瘦/正常/微胖/该减肥了
+   偏瘦/正常/微胖/该减肥了
 
-  3. 测试成功后，请用 <font color=red>**POJO类方式**</font> 接收数据再次实现
-
-
+3. 测试成功后，请用 <font color=red>**POJO类方式**</font> 接收数据再次实现
 
 ## 7 POJO
 
@@ -621,8 +592,6 @@ Plain Ordinary Java Object：简单的Java对象；
 POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用于简化 Java 应用程序开发的编程模型；
 
 是entity实体类、VO（Value Object或View Object）视图对象、DTO（Data Transfer Object）数据传输对象 这3个对象的总称。
-
-
 
 ### 7.2 entity实体类|DTO|VO
 
@@ -637,7 +606,6 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 * VO作用
 
   用来处理服务器响应给客户端的数据的，比如：UserListVO(id,username,nickname)  登录成功后的列表页显示当前用户信息。
-
 
 ## 8 用户管理系统
 
@@ -669,11 +637,11 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 * 第1步：创建工程：**_052MVC-BOOT02**
 
-  * SprintBoot版本为2.7.17
-  * 勾选依赖
-    * Spring Web
-    * MyBatis Framework
-    * MySQL Driver
+    * SprintBoot版本为2.7.17
+    * 勾选依赖
+        * Spring Web
+        * MyBatis Framework
+        * MySQL Driver
 
 * 第2步：application.properties配置文件中定义连接数据库信息
 
@@ -696,7 +664,6 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 * 第5步：启动工程，浏览器访问测试  http://localhost:8080/index.html
 
-
 ### 8.3 添加用户
 
 #### 8.3.1 接口说明
@@ -716,20 +683,19 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 * 创建控制器并定义方法：
 
-  * 控制器：`controler.UserController`   
-  * 控制器方法： `addUser()` 
+    * 控制器：`controler.UserController`
+    * 控制器方法： `addUser()`
 
 * 创建映射接口及接口方法：
 
-  * 映射接口：`mapper.UserMapper` 
-  * 接口方法： `insert()` 
+    * 映射接口：`mapper.UserMapper`
+    * 接口方法： `insert()`
 
 * xml配置SQL
 
 * UserController中自动装配，完成添加用户功能并返回响应
 
 * 重启工程，完成测试(`.http` 后缀文件)
-
 
 ### 8.4 用户列表
 
@@ -742,14 +708,12 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 #### 8.4.2 操作步骤
 
-* 定义映射接口方法：`mapper.UserMapper` 
+* 定义映射接口方法：`mapper.UserMapper`
 * xml 配置 SQL
 
-* 处理请求并返回响应：`UserController` 
+* 处理请求并返回响应：`UserController`
 
 * 测试
-
-
 
 ### 8.5 删除用户
 
@@ -762,14 +726,12 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 #### 8.5.2 操作步骤
 
-* 定义映射接口方法：`mapper.UserMapper` 
+* 定义映射接口方法：`mapper.UserMapper`
 * xml 配置 SQL
 
-* 处理请求并返回响应：`UserController` 
+* 处理请求并返回响应：`UserController`
 
 * 测试
-
-
 
 ### 8.6 更新用户
 
@@ -786,8 +748,6 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 * xml 配置 SQL
 * UserController 处理请求并返回响应
 
-
-
 ### 8.7 工程优化
 
 #### 8.7.1 @RestController注解优化
@@ -803,11 +763,11 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 * 说明
 
   `@RestController`注解作用于类上；
-  
+
   作用是将类中的方法返回值直接作为HTTP响应的内容；
-  
+
   在控制器类中加入该注解后，无需在每个方法上添加`@ResponseBody`注解；
-  
+
   可以让Spring框架自动将方法的返回值序列化并填充到HTTP响应中，实现Web服务端点的快速开发。
 
 #### 8.7.2 @RequestMapping注解优化
@@ -855,7 +815,6 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
   }
   ```
 
-
 ## 9 练习实操
 
 ### 9.1 员工管理系统练习
@@ -866,14 +825,12 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 员工表 **emp** 字段包含：员工编号id，员工姓名title，员工工资salary，员工岗位job
 
-
-
 #### 9.1.1 项目准备
 
 * 创建 **egmvc1** 工程
 
-  * SpringBoot版本为 2.7.17
-  * 勾选3项依赖：Spring Web、MyBatis Framework、MySQL Driver
+    * SpringBoot版本为 2.7.17
+    * 勾选3项依赖：Spring Web、MyBatis Framework、MySQL Driver
 
 * 配置文件中配置数据库连接信息和xml映射文件位置
 
@@ -889,10 +846,8 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
   	job		VARCHAR(20)
   )CHARSET=UTF8;
   ```
-  
+
 * 启动工程
-
-
 
 #### 9.1.2 项目接口
 
@@ -903,16 +858,12 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 * 请求体数据：`员工姓名title、员工工资salary、员工岗位job`
 * 返回响应：`String  "添加成功"`
 
-
-
 ##### 2）查询所有员工的  姓名和岗位
 
 * 请求地址：`/emp/select`
 * 请求方法：`GET`
 * 查询参数：`无`
 * 返回响应：`List<EmpVO>`
-
-
 
 ##### 3）修改员工信息
 
@@ -921,16 +872,12 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 * 查询参数：`id=员工编号&title=员工姓名&salary=员工工资&job=员工岗位`
 * 返回响应：`String  "修改成功"`
 
-
-
 ##### 4）删除员工信息
 
 * 请求地址：`/emp/delete?id=员工编号`
 * 请求方法：`GET`
 * 查询参数：`id=员工编号`
 * 返回响应：`字符串 "删除成功"`
-
-
 
 ### 9.2 地址管理系统练习
 
@@ -940,9 +887,9 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 ##### 1）数据表：收货地址表
 
-1. 收货地址id  INT PRIMARY KEY AUTO_INCREMENT,
+1. 收货地址id INT PRIMARY KEY AUTO_INCREMENT,
 
-2. 收件人receiver  VARCHAR(20),
+2. 收件人receiver VARCHAR(20),
 
 3. 收货地址address VARCHAR(255),
 
@@ -992,7 +939,6 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 * 返回响应：`List<Address>`  <font color=red>**查询所有字段，放到实体类即可，无须创建VO类了**</font>
 
-
 ##### 3）删除收货地址
 
 * 请求地址：`/address/delete`
@@ -1003,15 +949,12 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
 * 返回响应：`String "删除成功"`
 
-
 ##### 4）修改收货地址
 
 * 请求地址：`/address/update`
 * 请求方法：`POST`
 * 亲球体数据：`id=xx&receiver=xx&address=xx&email=xxx&mobile=xx&tag=xx`
 * 返回响应：`String "修改成功"`
-
-
 
 ## 10 注解总结
 
@@ -1029,8 +972,8 @@ POJO 对象通常包含了纯粹的数据和简单的业务逻辑，是一种用
 
   将HTTP请求映射到控制器中的方法，指定处理请求的路径
 
-  * 控制器类上：为整个控制器指定一个基础路径
-  * 控制器方法上：指定相对于基础路径的具体路径
+    * 控制器类上：为整个控制器指定一个基础路径
+    * 控制器方法上：指定相对于基础路径的具体路径
 
 * `@ResponseBody` 注解
 

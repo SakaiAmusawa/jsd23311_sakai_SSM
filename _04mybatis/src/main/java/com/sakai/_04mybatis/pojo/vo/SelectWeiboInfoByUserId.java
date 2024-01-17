@@ -22,6 +22,7 @@ public class SelectWeiboInfoByUserId {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -30,6 +31,7 @@ public class SelectWeiboInfoByUserId {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -38,6 +40,7 @@ public class SelectWeiboInfoByUserId {
 
     /**
      * 获取
+     *
      * @return nickname
      */
     public String getNickname() {
@@ -46,6 +49,7 @@ public class SelectWeiboInfoByUserId {
 
     /**
      * 设置
+     *
      * @param nickname
      */
     public void setNickname(String nickname) {
@@ -54,6 +58,7 @@ public class SelectWeiboInfoByUserId {
 
     /**
      * 获取
+     *
      * @return weiboList
      */
     public List<Weibo> getWeiboList() {
@@ -62,6 +67,7 @@ public class SelectWeiboInfoByUserId {
 
     /**
      * 设置
+     *
      * @param weiboList
      */
     public void setWeiboList(List<Weibo> weiboList) {

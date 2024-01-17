@@ -1,22 +1,19 @@
 [TOC]
 
-
-
 ![spring](./images/spring-16827607184382.jpg)
 
 ## 1 spring概述
 
 ### 1.1 Spring定义
 
-​	Spring是一款主流的 Java EE 开源框架，目的是用于简化Java企业级引用的开发难度和开发周期。从简单性、可测试性的角度而言，任何Java应用都可以从Spring中受益。Spring框架提供自己提供功能外，还提供整合其他技术和框架的能力。
+​ Spring是一款主流的 Java EE
+开源框架，目的是用于简化Java企业级引用的开发难度和开发周期。从简单性、可测试性的角度而言，任何Java应用都可以从Spring中受益。Spring框架提供自己提供功能外，还提供整合其他技术和框架的能力。
 
-​	自2004年4月，Spring1.0 版正式发布以来，Spring已经步入到了第6个大版本，即 Spring6，本课程采用 **Spring5.3.24** 正式版本。
+​ 自2004年4月，Spring1.0 版正式发布以来，Spring已经步入到了第6个大版本，即 Spring6，本课程采用 **Spring5.3.24** 正式版本。
 
 Spring官网地址：https://spring.io/
 
 ![image-20230715063053243](./images/image-20230715063053243.png)
-
-
 
 ### 1.2 Spring核心
 
@@ -33,7 +30,6 @@ Spring的两个核心模块
 * **AOP面向切面编程**
 
   `Aspect Oriented Programming` 的简写，为 面向切面编程。`AOP` 用来封装多个类的公共行为，将那些与业务无关，却为业务模块共同调用的逻辑封装起来，减少系统的重复代码。
-
 
 ## 2 入门案例
 
@@ -153,22 +149,18 @@ Spring中的IoC容器就是IoC思想的一个落地产品实现。IoC容器中�
 
 ![image-20230429223910264](./images/image-20230429223910264.png)
 
-
-
 * ApplicationContext的主要实现类
 
   |                类型                |                 说明                  |
-  | :--------------------------------: | :-----------------------------------: |
+    | :--------------------------------: | :-----------------------------------: |
   | AnnotationConfigApplicationContext |        使用注解方式构建IoC容器        |
   |   ClassPathXmlApplicationContext   | 使用XML配置文件方式构建Spring IoC容器 |
-
-
 
 ## 5 xml管理Bean
 
 ### 5.1 XML配置Bean
 
-​	在Spring框架中，Bean的配置可以通过 `XML` 文件来完成。这个文件通常被称为 `Spring` 配置文件或 `Spring XML` 文件。
+​ 在Spring框架中，Bean的配置可以通过 `XML` 文件来完成。这个文件通常被称为 `Spring` 配置文件或 `Spring XML` 文件。
 
 * **第1步：工程目录下创建Java类：cn.tedu.spring.example.UserXml.java**
 
@@ -201,29 +193,29 @@ Spring中的IoC容器就是IoC思想的一个落地产品实现。IoC容器中�
 
 * **第4步：TestUserXml.java 中获取Bean对象**
 
-  * 方式1：根据 `id` 获取
+    * 方式1：根据 `id` 获取
 
-    ```java
-    ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-    UserXml userXml1 = (UserXml) context.getBean("userXml");
-    userXml1.run();
-    ```
+      ```java
+      ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+      UserXml userXml1 = (UserXml) context.getBean("userXml");
+      userXml1.run();
+      ```
 
-  * 方式2：根据 `class` 类型获取
+    * 方式2：根据 `class` 类型获取
 
-    ```java
-    ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-    UserXml userXml2 = context.getBean(UserXml.class);
-    userXml2.run();
-    ```
+      ```java
+      ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+      UserXml userXml2 = context.getBean(UserXml.class);
+      userXml2.run();
+      ```
 
-  * 方式3：根据 `id` 和 `class` 获取
+    * 方式3：根据 `id` 和 `class` 获取
 
-    ```java
-    ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-    UserXml userXml3 = context.getBean("userXml", UserXml.class);
-    userXml3.run();
-    ```
+      ```java
+      ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+      UserXml userXml3 = context.getBean("userXml", UserXml.class);
+      userXml3.run();
+      ```
 
 ### 5.2 依赖注入DI
 
@@ -320,16 +312,17 @@ DI （Dependency Injection）：依赖注入，依赖注入实现了控制反转
 
 Spring提供了以下多个注解，这些注解可以直接标注在java类上，将它们定义成Spring Bean。
 
-|    注解     |                             说明                             |
-| :---------: | :----------------------------------------------------------: |
+|     注解      |                                                 说明                                                 |
+|:-----------:|:--------------------------------------------------------------------------------------------------:|
 | @Component  | 该注解用于描述Spring中的Bean，它是一个泛化的概念，仅仅标识容器中的一个组件（Bean），并且可以作用在任何层次，例如Service层、Dao层等，使用时只需将该注解标注在相应的类上即可。 |
-| @Repository | 该注解用于数据访问层（Dao层）的类标识为Spring中的Bean，功能与@Component相同。 |
-|  @Service   | 该注解通常作用在业务层（Service层），用于将业务层的类标识为Spring中的Bean，其功能与@Component相同。 |
-| @Controller | 该注解通常作用在控制层（如SpringMVC的Controller），用于将控制层的类标识为Spring中的Bean，其功能与@Component相同。 |
+| @Repository |                         该注解用于数据访问层（Dao层）的类标识为Spring中的Bean，功能与@Component相同。                         |
+|  @Service   |                  该注解通常作用在业务层（Service层），用于将业务层的类标识为Spring中的Bean，其功能与@Component相同。                   |
+| @Controller |            该注解通常作用在控制层（如SpringMVC的Controller），用于将控制层的类标识为Spring中的Bean，其功能与@Component相同。            |
 
 #### 6.1.2 Bean对象获取
 
-​	通过 `ApplicationContext` 对象获取：调用 `ApplicationContext` 对象的 `getBean()` 方法，传入对应类的类型即可获取该 `Bean` 对象，示例：
+​ 通过 `ApplicationContext` 对象获取：调用 `ApplicationContext` 对象的 `getBean()` 方法，传入对应类的类型即可获取该 `Bean`
+对象，示例：
 
 ```java
 ApplicationContext context = new AnnotationConfigApplicationContext("包扫描路径");
@@ -364,13 +357,15 @@ User user = context.getBean(类名.class);
   }
   ```
 
-  <font color=red>**说明：将java类中的 @Repository注解 替换为 @Component注解、@Service注解、@Controller注解 都是可以的。**</font>
+  <font color=red>**说明：将java类中的 @Repository注解 替换为 @Component注解、@Service注解、@Controller注解 都是可以的。
+  **</font>
 
 ### 6.2 依赖注入DI
 
 #### 6.2.1 @Value注解
 
-`@Value` 注入是将属性值直接注入到 `bean` 中，主要用于注入一些简单类型的属性（<font color=red>**如字符串、基本类型等**</font>）；
+`@Value` 注入是将属性值直接注入到 `bean` 中，主要用于注入一些简单类型的属性（<font color=red>**如字符串、基本类型等
+**</font>）；
 
 使用时需要注意属性的类型和格式，否则会导致注入失败。
 
@@ -405,14 +400,13 @@ User user = context.getBean(类名.class);
 
 * **练习**
 
-  1. 在工程目录 `cn.tedu.spring` 下创建包 `eg2`；
+    1. 在工程目录 `cn.tedu.spring` 下创建包 `eg2`；
 
-  2. 在 `eg2` 中创建商品类 `Product` ，属性包含：商品标题`title`、商品库存`num`、商品描述`comment`，
+    2. 在 `eg2` 中创建商品类 `Product` ，属性包含：商品标题`title`、商品库存`num`、商品描述`comment`，
 
-     将该类交由`spring`框架管理，并注入属性值（DI注入）,`title`和`num`在属性上, `comment`在`set`方法上注入；
+       将该类交由`spring`框架管理，并注入属性值（DI注入）,`title`和`num`在属性上, `comment`在`set`方法上注入；
 
-  3. 创建测试类 `TestProduct` ，进行 `Spring Bean` 对象的创建、依赖注入 及 `bean`对象的获取。
-
+    3. 创建测试类 `TestProduct` ，进行 `Spring Bean` 对象的创建、依赖注入 及 `bean`对象的获取。
 
 #### 6.2.2 @Autowired注解
 
@@ -468,7 +462,7 @@ User user = context.getBean(类名.class);
 
 ##### 6.2.2.2 根据接口类型注入
 
-​	进行依赖注入时，如果指定的是接口 `Interface`，`Spring` 框架会自动找到该接口对应的实现类并创建 `bean` 对象注入吗？
+​ 进行依赖注入时，如果指定的是接口 `Interface`，`Spring` 框架会自动找到该接口对应的实现类并创建 `bean` 对象注入吗？
 
 <font color=red>**在 cn.tedu.spring 下创建子包 auto**</font>
 
@@ -515,9 +509,8 @@ User user = context.getBean(类名.class);
   }
   ```
 
-  <font color=red>**总结： 当一个接口有一个唯一的实现类时，Spring框架会通过接口找到该接口对应的实现类，并进行bean对象的创建以及DI注入操作。**</font>
-
-
+  <font color=red>**总结： 当一个接口有一个唯一的实现类时，Spring框架会通过接口找到该接口对应的实现类，并进行bean对象的创建以及DI注入操作。
+  **</font>
 
 <font color=blue>**问题：那么如果一个接口有多个实现类，Spring框架会创建对应的 java bean 对象吗？**</font>
 
@@ -533,9 +526,8 @@ User user = context.getBean(类名.class);
 
   ![image-20230716223104424](./images/image-20230716223104424.png)
 
-  
-
-  <font color=red>**总结： 当一个接口有多个实现类时，Spring无法确定注入哪个实现类对象，因此会报错，可以结合 `@Qualifier注解` 来解决这个问题。**</font>
+<font color=red>**总结： 当一个接口有多个实现类时，Spring无法确定注入哪个实现类对象，因此会报错，可以结合 `@Qualifier注解`
+来解决这个问题。**</font>
 
 ##### 6.2.2.3 练习
 
@@ -552,7 +544,6 @@ User user = context.getBean(类名.class);
 * 创建实现类 `MapperImpl2`，并将此类交由 `Spring` 框架管理，进行测试。
 
 * 通过 `@Qualifier` 注解实现依赖注入.
-
 
 #### 6.2.3 @Qualifier注解
 
@@ -589,51 +580,54 @@ User user = context.getBean(类名.class);
 
 #### 6.2.4 @Resource注解[了解]
 
-`@Resource` 注解是 `JavaEE` 提供的注解之一，也支持在 `Spring Framework` 中使用。在 `Spring` 中，它可以用来注入 `Bean` 实例，与`@Autowired`注解的作用类似，但其也有自己的一些特点。
+`@Resource` 注解是 `JavaEE` 提供的注解之一，也支持在 `Spring Framework` 中使用。在 `Spring` 中，它可以用来注入 `Bean`
+实例，与`@Autowired`注解的作用类似，但其也有自己的一些特点。
 
 * `@Resource` 注解是JDK扩展包中的，也就是说属于JDK的一部分。所以该解释是标准注解，而 `@Autowired` 注解是 `Spring` 框架自己的。
 
 * 装配规则
 
-  * `@Resource` 注解默认根据名称装配 `byName`；
-  * 当未指定 `name` 时，则使用属性名作为 `name` 进行装配；
-  * 如果通过 `name` 也未找到，则会自动启动通过类型 `byType` 装配。
+    * `@Resource` 注解默认根据名称装配 `byName`；
+    * 当未指定 `name` 时，则使用属性名作为 `name` 进行装配；
+    * 如果通过 `name` 也未找到，则会自动启动通过类型 `byType` 装配。
 
   **而@Autowired注解默认根据类型装配byType，如果想根据名称匹配，需要配合@Qualifier注解一起使用。**
 
 * <font color=red>**课堂示例**</font>
 
-  * 包名：`resource`
+    * 包名：`resource`
 
 
-  * 接口：`ResMapper`
+* 接口：`ResMapper`
 
 
-  * 实现类1：`ResMapperImpl1`
+* 实现类1：`ResMapperImpl1`
 
 
-  * 实现类2：`ResMapperImpl2`
+* 实现类2：`ResMapperImpl2`
 
 
-  * DI注入类：`WeiboMapper`
+* DI注入类：`WeiboMapper`
 
 
-  * 测试类：`TestWeiboMapper`
+* 测试类：`TestWeiboMapper`
 
 
 * <font color=red>**总结**</font>
 
-  * 指定 `@Resource` 中的 `name`，则根据名称装配；
+    * 指定 `@Resource` 中的 `name`，则根据名称装配；
 
-  * 未指定 `name` 时，则根据属性名装配；
+    * 未指定 `name` 时，则根据属性名装配；
 
-  * 未指定 `name`，属性名也不一致，则根据类型装配.
+    * 未指定 `name`，属性名也不一致，则根据类型装配.
 
 ### 6.3 Bean作用域
 
 #### 6.3.1 说明
 
-​	在Spring框架中，Bean是按照作用域来创建的，常见的作用域有两种：`Singleton` 和 `Prototype`。其中，`Singleton` (单例)是指整个应用中只有一个实例，并在第一次请求时创建实例。而 `Prototype` (多例)是指每次请求都会创建一个新的实例并返回，每个实例之间是相互独立的。可以通过 `@Scope` 注解来指定，默认是单实例。
+​ 在Spring框架中，Bean是按照作用域来创建的，常见的作用域有两种：`Singleton` 和 `Prototype`。其中，`Singleton` (单例)
+是指整个应用中只有一个实例，并在第一次请求时创建实例。而 `Prototype` (多例)
+是指每次请求都会创建一个新的实例并返回，每个实例之间是相互独立的。可以通过 `@Scope` 注解来指定，默认是单实例。
 
 #### 6.3.2 单实例与多实例
 
@@ -647,10 +641,10 @@ User user = context.getBean(类名.class);
 
 <font color=red>**在Spring中可以通过 `@Scope` 注解来指定bean的作用域范围，具体如下**</font>
 
-|              取值               |                含义                 |
-| :-----------------------------: | :---------------------------------: |
+|             取值              |          含义           |
+|:---------------------------:|:---------------------:|
 | @Scope("singleton")（**默认**） | 在IoC容器中，这个bean的对象为单实例 |
-|       @Scope("prototype")       |    这个bean在IoC容器中有多个实例    |
+|     @Scope("prototype")     |  这个bean在IoC容器中有多个实例   |
 
 #### 6.3.3 应用分析
 
@@ -682,17 +676,17 @@ User user = context.getBean(类名.class);
 
 * **总结**
 
-  * <font color=red>**当为单例模式 singleton 时，多次获取bean实例的地址是相同的**</font>
+    * <font color=red>**当为单例模式 singleton 时，多次获取bean实例的地址是相同的**</font>
 
-    ![image-20230525111915738](./images/image-20230525111915738.png)
+      ![image-20230525111915738](./images/image-20230525111915738.png)
 
-  * <font color=red>**当为多例模式 prototype 时，多次获取bean实例的地址是不同的**</font>
+    * <font color=red>**当为多例模式 prototype 时，多次获取bean实例的地址是不同的**</font>
 
-    ![image-20230525112036529](./images/image-20230525112036529.png)
+      ![image-20230525112036529](./images/image-20230525112036529.png)
 
-
-
-**<font color=red>单例模式适用于需要共享数据并且需要避免重复创建实例的情况。而多例模式适用于需要动态地创建对象并提供独立实例的情况。</font>**
+**<font color=red>
+单例模式适用于需要共享数据并且需要避免重复创建实例的情况。而多例模式适用于需要动态地创建对象并提供独立实例的情况。</font>
+**
 
 ### 6.4 Bean生命周期
 
@@ -807,13 +801,13 @@ User user = context.getBean(类名.class);
 Bean初始化和销毁方法可以在Bean生命周期的特定时机执行自定义逻辑，方便地对Bean进行管理和配置。
 
 * 初始化常见应用场景
-  - 创建数据库连接
-  - 加载资源文件
-  - 进行数据校验
+    - 创建数据库连接
+    - 加载资源文件
+    - 进行数据校验
 * 销毁常见应用场景
-  - 断开数据库连接
-  - 保存数据
-  - 释放占用的资源
+    - 断开数据库连接
+    - 保存数据
+    - 释放占用的资源
 
 ### 6.5 引用外部属性文件
 
@@ -821,7 +815,8 @@ Bean初始化和销毁方法可以在Bean生命周期的特定时机执行自定
 
 实际开发中，很多情况下我们需要对一些变量或属性进行动态配置，而这些配置可能不应该硬编码到我们的代码中，因为这样会降低代码的可读性和可维护性。
 
-我们可以将这些配置放到外部属性文件中，比如`database.properties`文件，然后在代码中引用这些属性值，例如`jdbc.url`和`jdbc.username`等。这样，我们在需要修改这些属性值时，只需要修改属性文件，而不需要修改代码，这样修改起来更加方便和安全。
+我们可以将这些配置放到外部属性文件中，比如`database.properties`文件，然后在代码中引用这些属性值，例如`jdbc.url`
+和`jdbc.username`等。这样，我们在需要修改这些属性值时，只需要修改属性文件，而不需要修改代码，这样修改起来更加方便和安全。
 
 而且，通过将应用程序特定的属性值放在属性文件中，我们还可以将应用程序的配置和代码逻辑进行分离，这可以使得我们的代码更加通用、灵活。
 
@@ -847,11 +842,11 @@ Bean初始化和销毁方法可以在Bean生命周期的特定时机执行自定
 
 * 第2步：工程目录下创建子包 `file` 并创建类 `Database`
 
-  * 通过 `@PropertySource` 注解引入外部文件
+    * 通过 `@PropertySource` 注解引入外部文件
 
-  * 通过 `${变量名}` 获取属性值
+    * 通过 `${变量名}` 获取属性值
 
-  * 通过 `@Value()` 注解进行属性值注入
+    * 通过 `@Value()` 注解进行属性值注入
 
   ```java
   @Component
@@ -892,13 +887,16 @@ Bean初始化和销毁方法可以在Bean生命周期的特定时机执行自定
 
 #### 6.6.1 说明
 
-自动扫描配置是 Spring 框架提供的一种基于注解（Annotation）的配置方式，用于自动发现和注册 Spring 容器中的组件。当我们使用自动扫描配置的时候，只需要在需要被 Spring 管理的组件（比如 Service、Controller、Repository 等）上添加对应的注解，Spring 就会自动地将这些组件注册到容器中，从而可以在其它组件中使用它们。
+自动扫描配置是 Spring 框架提供的一种基于注解（Annotation）的配置方式，用于自动发现和注册 Spring
+容器中的组件。当我们使用自动扫描配置的时候，只需要在需要被 Spring 管理的组件（比如 Service、Controller、Repository
+等）上添加对应的注解，Spring 就会自动地将这些组件注册到容器中，从而可以在其它组件中使用它们。
 
 在 Spring 中，通过 `@ComponentScan` 注解来实现自动扫描配置。
 
 `@ComponentScan` 注解用于指定要扫描的包或类。
 
-Spring 会在指定的包及其子包下扫描所有添加 `@Component`（或 `@Service`、`@Controller`、`@Repository` 等）注解的类，把这些类注册为 Spring Bean，并纳入 Spring 容器进行管理。
+Spring 会在指定的包及其子包下扫描所有添加 `@Component`（或 `@Service`、`@Controller`、`@Repository` 等）注解的类，把这些类注册为
+Spring Bean，并纳入 Spring 容器进行管理。
 
 #### 6.6.2 使用示例
 

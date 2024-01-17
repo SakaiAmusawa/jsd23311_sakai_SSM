@@ -12,11 +12,14 @@
 
 - Spring MVC框架
 
-  `SpringMVC` 是 `Spring Framework` 的子模块，基于Spring框架的MVC（Model-View-Controller，模型-视图-控制器）架构的Web框架，<font color=red>**用于快速开发Web应用程序**。</font>
+  `SpringMVC` 是 `Spring Framework`
+  的子模块，基于Spring框架的MVC（Model-View-Controller，模型-视图-控制器）架构的Web框架，<font color=red>**用于快速开发Web应用程序
+  **。</font>
 
 - MyBatis框架
 
-  `MyBatis` 是一个开源的 <font color=red>**数据持久层框架**</font>，它提供了一种将Java对象与关系型数据库之间进行映射的方式，MyBatis通过配置文件或注解来定义SQL映射。
+  `MyBatis` 是一个开源的 <font color=red>**数据持久层框架**</font>
+  ，它提供了一种将Java对象与关系型数据库之间进行映射的方式，MyBatis通过配置文件或注解来定义SQL映射。
 
 ### 2 关于SpringBoot
 
@@ -62,11 +65,11 @@ ORM（**Object Relational Mapping**）叫做 <font color=red>**对象关系映�
 
 ORM 将数据库中的表、字段、记录关系结构映射为类、属性、对象面向对象的结构。开发人员可以通过面向对象的方式操作数据库。
 
-|    Java    |   数据库   |
-| :--------: | :--------: |
-|   一个类   |   一张表   |
+| Java  |  数据库  |
+|:-----:|:-----:|
+|  一个类  |  一张表  |
 | 一个类属性 | 一个表字段 |
-|  一个对象  | 一条表记录 |
+| 一个对象  | 一条表记录 |
 
 **注意:**
 
@@ -82,9 +85,9 @@ ORM 将数据库中的表、字段、记录关系结构映射为类、属性、�
 - 第4步：创建接口，添加 `@Mapper` 注解；
 - 第5步：定义接口方法[<font color=red>**判断是否需要提前创建 VO 类**</font>]；
 - 第6步：定义测试方法，进行测试
-  - **注意1**：测试类上添加 `@SpringBootTest` 注解；
-  - **注意2**：测试方法上添加 `@Test` 注解；
-  - **注意3**：测试方法  <font color=red>**无参无返回值**</font>；
+    - **注意1**：测试类上添加 `@SpringBootTest` 注解；
+    - **注意2**：测试方法上添加 `@Test` 注解；
+    - **注意3**：测试方法  <font color=red>**无参无返回值**</font>；
 
 #### 4.2 注解方式执行流程
 

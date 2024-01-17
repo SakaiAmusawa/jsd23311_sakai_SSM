@@ -16,6 +16,7 @@ public class WeiboIndexVO {
 
     /**
      * 获取
+     *
      * @return id
      */
     public Long getId() {
@@ -24,6 +25,7 @@ public class WeiboIndexVO {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(Long id) {
@@ -32,6 +34,7 @@ public class WeiboIndexVO {
 
     /**
      * 获取
+     *
      * @return content
      */
     public String getContent() {
@@ -40,6 +43,7 @@ public class WeiboIndexVO {
 
     /**
      * 设置
+     *
      * @param content
      */
     public void setContent(String content) {
@@ -48,6 +52,7 @@ public class WeiboIndexVO {
 
     /**
      * 获取
+     *
      * @return nickName
      */
     public String getNickName() {
@@ -56,6 +61,7 @@ public class WeiboIndexVO {
 
     /**
      * 设置
+     *
      * @param nickName
      */
     public void setNickName(String nickName) {

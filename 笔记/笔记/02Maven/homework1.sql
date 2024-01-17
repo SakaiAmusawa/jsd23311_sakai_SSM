@@ -43,31 +43,50 @@ VALUES ('边城', '沈从文', '机械工业出版社', 36, '小城故事多'),
 INSERT INTO books(bname, author, press, price)
 VALUES ('林家铺子', '茅盾', '机械工业出版社', 51),
        ('子夜', '茅盾', '人民教育出版社', 47);
-SELECT * FROM egdb1.books;
+SELECT *
+FROM egdb1.books;
 # 9. SQL语句练习
 # 1. 查找人民教育出版社出版的图书
-SELECT bname,press FROM egdb1.books WHERE press='人民教育出版社';
+SELECT bname, press
+FROM egdb1.books
+WHERE press = '人民教育出版社';
 # 2. 查找老舍写的，中国文学出版社出版的图书
-SELECT bname,author,press FROM egdb1.books WHERE author='老舍' AND press='中国文学出版社';
+SELECT bname, author, press
+FROM egdb1.books
+WHERE author = '老舍'
+  AND press = '中国文学出版社';
 # 3. 查找价格超过60元[**不包括60元**]的图书，只看书名和价格
-SELECT bname,price FROM egdb1.books WHERE price>60;
+SELECT bname, price
+FROM egdb1.books
+WHERE price > 60;
 # 4. 将呐喊的价格修改为45元
-UPDATE egdb1.books SET price=45 WHERE bname='呐喊';
+UPDATE egdb1.books
+SET price=45
+WHERE bname = '呐喊';
 # 5. 增加一个字段出版时间，类型为 date ，放在价格字段price后面
-ALTER TABLE egdb1.books ADD pub_time DATE AFTER price;
+ALTER TABLE egdb1.books
+    ADD pub_time DATE AFTER price;
 DESC egdb1.books;
 # 6. 修改所有老舍的作品出版时间为 2018-10-01
-UPDATE egdb1.books SET pub_time='2018-10-01' WHERE author='老舍';
+UPDATE egdb1.books
+SET pub_time='2018-10-01'
+WHERE author = '老舍';
 # 7. 所有鲁迅的图书价格增加5元
-UPDATE egdb1.books SET price=price+5 WHERE author='鲁迅';
+UPDATE egdb1.books
+SET price=price + 5
+WHERE author = '鲁迅';
 # 8. 删除所有价格超过70元[**包含70元**]或者不到40元[**不包含40元**]的图书
-DELETE FROM egdb1.books WHERE price>=70 OR price<40;
-SELECT * FROM books;
+DELETE
+FROM egdb1.books
+WHERE price >= 70
+   OR price < 40;
+SELECT *
+FROM books;
 
 # ========================作业3[选做] ===========================
 # 1. 创建库 **egdb2**，指定字符集为UTF8
 DROP DATABASE IF EXISTS egdb2;
-CREATE DATABASE egdb2 CHARSET=UTF8;
+CREATE DATABASE egdb2 CHARSET = UTF8;
 # 2. 切换库
 USE egdb2;
 # 3. 创建表 **sanguo** 并指定字符集为UTF8，字段要求如下
@@ -77,14 +96,15 @@ USE egdb2;
 #    - 国家country：定长，字符宽度为1，不允许为空
 #    - 攻击力attack：INT，不允许为空
 #    - 防御力defense：INT，不允许为空
-CREATE TABLE IF NOT EXISTS sanguo(
-    id INT PRIMARY KEY AUTO_INCREMENT COMMENT '英雄编号',
-    name VARCHAR(30) NOT NULL COMMENT '英雄名称',
-    gender CHAR(1) NOT NULL COMMENT '性别',
-    country CHAR(1) NOT NULL COMMENT '国家',
-    attack INT NOT NULL COMMENT '攻击力',
-    defense INT NOT NULL COMMENT '防御力'
-)CHARSET=UTF8;
+CREATE TABLE IF NOT EXISTS sanguo
+(
+    id      INT PRIMARY KEY AUTO_INCREMENT COMMENT '英雄编号',
+    name    VARCHAR(30) NOT NULL COMMENT '英雄名称',
+    gender  CHAR(1)     NOT NULL COMMENT '性别',
+    country CHAR(1)     NOT NULL COMMENT '国家',
+    attack  INT         NOT NULL COMMENT '攻击力',
+    defense INT         NOT NULL COMMENT '防御力'
+) CHARSET = UTF8;
 # 4. 在表中插入数据
 INSERT INTO sanguo
 VALUES (1, '曹操', '男', '魏', 256, 63),
@@ -100,7 +120,8 @@ VALUES (1, '曹操', '男', '魏', 256, 63),
        (11, '小乔', '女', '吴', 188, 39),
        (12, '周瑜', '男', '吴', 303, 60),
        (13, '吕蒙', '男', '吴', 330, 71);
-SELECT * FROM sanguo;
+SELECT *
+FROM sanguo;
 # 5. **SQL练习**
 # SELECT ...聚合函数
 # FROM 表名
@@ -110,46 +131,60 @@ SELECT * FROM sanguo;
 # ORDER BY 排序字段
 # LIMIT 分页;
 # 1. 查找所有蜀国人信息，按照攻击力排名
-SELECT name,country,attack FROM sanguo
-WHERE country='蜀'
+SELECT name, country, attack
+FROM sanguo
+WHERE country = '蜀'
 ORDER BY attack DESC;
 # 2. 查找攻击力超过200[**包含200**]的魏国英雄名字和攻击力并显示为姓名， 攻击力
-SELECT name,country,attack FROM sanguo
-WHERE attack>=200 AND country='魏';
+SELECT name, country, attack
+FROM sanguo
+WHERE attack >= 200
+  AND country = '魏';
 # 3. 所有英雄按照攻击力降序排序，如果相同则按照防御升序排序
-SELECT name,attack,defense FROM sanguo
-ORDER BY attack DESC,defense;
+SELECT name, attack, defense
+FROM sanguo
+ORDER BY attack DESC, defense;
 # 4. 查找名字为3个字符的数据
-SELECT name FROM sanguo
+SELECT name
+FROM sanguo
 WHERE name LIKE '___';
 # 5. 找到魏国防御力排名2-3名的英雄
-SELECT name,country,defense FROM sanguo
-WHERE country='魏'
+SELECT name, country, defense
+FROM sanguo
+WHERE country = '魏'
 ORDER BY defense DESC
 LIMIT 1,2;
 # 6. 找出表中的最大攻击力的值？
-SELECT MAX(attack) FROM sanguo;
+SELECT MAX(attack)
+FROM sanguo;
 # 7. 表中共有多少个英雄？
-SELECT COUNT(*) FROM sanguo;
+SELECT COUNT(*)
+FROM sanguo;
 # 8. 蜀国英雄中攻击值大于200[**包含200**]的英雄的数量
-SELECT COUNT(*) FROM sanguo
-WHERE country='蜀' AND attack>=200;
+SELECT COUNT(*)
+FROM sanguo
+WHERE country = '蜀'
+  AND attack >= 200;
 # 9. 计算每个国家的平均攻击力
-SELECT country,AVG(attack) FROM sanguo
+SELECT country, AVG(attack)
+FROM sanguo
 GROUP BY country;
 # 10. 统计每个国家男性英雄和女性英雄的平均攻击力
-SELECT country,gender,AVG(attack) FROM sanguo
-GROUP BY country,gender;
+SELECT country, gender, AVG(attack)
+FROM sanguo
+GROUP BY country, gender;
 # 11. 所有国家的男英雄中 英雄数量最多的前2名的 国家名称及英雄数量
-SELECT country, COUNT(*) total FROM sanguo
-WHERE gender='男'
+SELECT country, COUNT(*) total
+FROM sanguo
+WHERE gender = '男'
 GROUP BY country
 ORDER BY total DESC
 LIMIT 2;
 # 12. 统计平均攻击力大于250[**包含250**]的国家的英雄数量
-SELECT country,COUNT(*) FROM sanguo
+SELECT country, COUNT(*)
+FROM sanguo
 GROUP BY country
-HAVING AVG(attack)>=250;
+HAVING AVG(attack) >= 250;
 
 
 

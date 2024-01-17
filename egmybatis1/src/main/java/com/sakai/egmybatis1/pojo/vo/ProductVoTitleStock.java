@@ -14,6 +14,7 @@ public class ProductVoTitleStock {
 
     /**
      * 获取
+     *
      * @return title
      */
     public String getTitle() {
@@ -22,6 +23,7 @@ public class ProductVoTitleStock {
 
     /**
      * 设置
+     *
      * @param title
      */
     public void setTitle(String title) {
@@ -30,6 +32,7 @@ public class ProductVoTitleStock {
 
     /**
      * 获取
+     *
      * @return stock
      */
     public Integer getStock() {
@@ -38,6 +41,7 @@ public class ProductVoTitleStock {
 
     /**
      * 设置
+     *
      * @param stock
      */
     public void setStock(Integer stock) {
