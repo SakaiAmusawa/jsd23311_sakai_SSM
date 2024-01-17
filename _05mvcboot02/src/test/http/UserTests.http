@@ -1,3 +1,14 @@
+POST http://localhost:8080/v1/users/update
+Content-Type: application/x-www-form-urlencoded
+
+id = 2 &
+username = sakai &
+password = abcd &
+nickname = amusawa
+
+
+
+###
 GET http://localhost:8080/v1/users/delete?id = 2
 Accept: application/json
 

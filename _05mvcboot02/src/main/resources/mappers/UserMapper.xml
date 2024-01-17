@@ -18,4 +18,14 @@
         FROM mvcdb.user
         WHERE id = #{id}
     </delete>
+
+    <update id="updateUser">
+        UPDATE mvcdb.user
+        <set>
+            <if test="username!=null">username = #{username},</if>
+            <if test="password!=null">password = #{password},</if>
+            <if test="nickname!=null">nickname = #{nickname}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
 </mapper>

@@ -17,4 +17,6 @@ public interface UserMapper {
     List<UserListVO> selectUser();
 
     int deleteUser(Integer id);
+
+    int updateUser(User user);
 }
