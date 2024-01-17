@@ -65,7 +65,6 @@ public class UserController {
     @RequestMapping("/v1/users/update")
     @ResponseBody
     public String update(Integer id, UserDTO userDTO) {
-        id = 1;
         String password = userDTO.getPassword();
         String nickname = userDTO.getNickname();
         String username = userDTO.getUsername();
